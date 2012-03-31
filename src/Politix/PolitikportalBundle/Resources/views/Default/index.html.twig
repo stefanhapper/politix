@@ -17,8 +17,15 @@
     	{% for source in sources %}
         
         	<tr>
-        		<td>{{ source.name }}</td>
-        		<td>{{ source.id }}</td>
+        	
+        	    {% for field in source %}
+
+        		<td>{{ field }}</td>
+
+		    	{% else %}
+    		    	<li>No fields</li>
+		    	{% endfor %}
+
         	</tr>
     
     	{% else %}
