@@ -16,13 +16,9 @@
     
     	<thead>
     		<tr>
-    			{% for key in sources[0]|keys %}
-
-        		<th>{{ key }}</th>
-
-		    	{% else %}
-    		    	<li>No keys</li>
-		    	{% endfor %}
+        		<th>Name</th>
+        		<th>Status</th>
+        		<th>Action</th>
     		</tr>
     	</thead>
 
@@ -31,12 +27,38 @@
         
         	<tr>
         	
-        	    {% for field in source %}
+        		<td>{{ source.name }}</td>
+        		<td>{{ source.status }}</td>
+				<td>
+					
+					<div class="btn-toolbar" style="margin-bottom: 9px">
+						<div class="btn-group">
 
-        		<td>{{ field }}</td>
+							<a class="btn btn-primary" href="#">
+								<i class="icon-user icon-white"></i>
+								User
+							</a>
+							
+							<a class="btn btn-primary dropdown-toggle" href="#" data-toggle="dropdown">
+								<span class="caret"></span>
+							</a>
+							
+							<ul class="dropdown-menu">
+								
+								<li><a href="#"><i class="icon-pencil"></i>Edit</a></li>
+								<li><a href="#"><i class="icon-trash"></i>Delete</a></li>
+								<li><a href="#"><i class="icon-ban-circle"></i>Ban</a></li>
+								<li class="divider"></li>
+								<li><a href="#"><i class="i"></i>Make admin</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</td>
+				
 
 		    	{% else %}
-    		    	<li>No fields</li>
+    		    	<code>No sources</code>
 		    	{% endfor %}
 
         	</tr>
