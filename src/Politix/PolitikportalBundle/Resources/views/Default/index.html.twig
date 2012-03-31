@@ -18,6 +18,14 @@
         
         	<tr>
         	
+        	    {% for field in source|keys %}
+
+        		<th>{{ field }}</th>
+
+		    	{% else %}
+    		    	<li>No keys</li>
+		    	{% endfor %}
+
         	    {% for field in source %}
 
         		<td>{{ field }}</td>
