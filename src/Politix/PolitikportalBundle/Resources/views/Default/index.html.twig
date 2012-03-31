@@ -11,9 +11,9 @@
 
 
 {% block main %}
-	{{results}}
-    {% for r in results %}
-        <li>{{ r.name }}</li>
+
+    {% for source in sources %}
+        <li>{{ source.name }}</li>
     {% else %}
         <li>No sources found</li>
     {% endfor %}
