@@ -14,18 +14,23 @@
 
     <table class="table table-bordered table-condensed">
     
-    	{% for source in sources %}
-        
-        	<tr>
-        	
-        	    {% for key in source|keys %}
+    	<thead>
+    		<tr>
+    			{% for key in sources|keys %}
 
         		<th>{{ key }}</th>
 
 		    	{% else %}
     		    	<li>No keys</li>
 		    	{% endfor %}
+    		</tr>
+    	</thead>
 
+
+    	{% for source in sources %}
+        
+        	<tr>
+        	
         	    {% for field in source %}
 
         		<td>{{ field }}</td>
