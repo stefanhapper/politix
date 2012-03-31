@@ -34,12 +34,12 @@
 					<div class="btn-toolbar" style="margin-bottom: 9px">
 						<div class="btn-group btn-mini">
 
-							<a class="btn-primary btn-mini" href="#">
+							<a class="{% if source.status %} btn-primary {% endif %}btn-mini" href="#">
 								<i class="icon-user icon-white"></i>
 								{{ source.name }}
 							</a>
 							
-							<a class="btn {% if source.status %} btn-primary {% endif %}btn-mini dropdown-toggle" href="#" data-toggle="dropdown">
+							<a class="{% if source.status %} btn-primary {% endif %}btn-mini dropdown-toggle" href="#" data-toggle="dropdown">
 								<span class="caret"></span>
 							</a>
 							
