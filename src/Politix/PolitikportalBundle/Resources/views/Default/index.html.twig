@@ -36,10 +36,10 @@
 
 							<a class="btn-primary btn-mini" href="#">
 								<i class="icon-user icon-white"></i>
-								User
+								{{ source.name }}
 							</a>
 							
-							<a class="btn btn-primary btn-mini dropdown-toggle" href="#" data-toggle="dropdown">
+							<a class="btn {{% if source.status %}} btn-primary {{% endif %}}btn-mini dropdown-toggle" href="#" data-toggle="dropdown">
 								<span class="caret"></span>
 							</a>
 							
