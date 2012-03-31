@@ -18,9 +18,9 @@
         
         	<tr>
         	
-        	    {% for field in source|keys %}
+        	    {% for key in source|keys %}
 
-        		<th>{{ field }}</th>
+        		<th>{{ key }}</th>
 
 		    	{% else %}
     		    	<li>No keys</li>
