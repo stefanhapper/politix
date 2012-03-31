@@ -12,10 +12,19 @@
 
 {% block main %}
 
-    {% for source in sources %}
-        <li>{{ source.name }}</li>
-    {% else %}
-        <li>No sources found</li>
-    {% endfor %}
+    <table class="table table-bordered table-condensed">
+    
+    	{% for source in sources %}
+        
+        	<tr>
+        		<td>{{ source.name }}</td>
+        		<td>{{ source.id }}</td>
+        	</tr>
+    
+    	{% else %}
+        	<li>No sources found</li>
+    	{% endfor %}
+    
+    </table>
 
 {% endblock %}

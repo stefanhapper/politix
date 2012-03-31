@@ -19,7 +19,7 @@ class FrontController extends Controller
 
 		
 		$conn = $this->container->get('database_connection');
-		$sql = 'SELECT name FROM rss_sources';
+		$sql = 'SELECT * FROM rss_sources';
 		$sources = $conn->query($sql);
 
 
