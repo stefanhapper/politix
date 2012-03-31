@@ -14,7 +14,8 @@ class FrontController extends Controller
     	// $q = Doctrine_Manager::getInstance()->getCurrentConnection();
 		// $result = $q->execute("SELECT name FROM rss_sources");
 		
-		// $results = $q->fetchAll();  
+		// $results = $q->fetchAll(); 
+		
 
 		
 		$conn = $this->container->get('database_connection');
