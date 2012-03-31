@@ -11,5 +11,11 @@
 
 
 {% block main %}
-     Das ist ein Maintext.
+
+     {% for r in results %}
+        <li>{{ r.name }}</li>
+    {% else %}
+        <li>No sources found</li>
+    {% endfor %}
+
 {% endblock %}
