@@ -10,20 +10,29 @@ class FrontController extends Controller
     
     public function indexAction($name)
     {
-    
-    	// $q = Doctrine_Manager::getInstance()->getCurrentConnection();
-		// $result = $q->execute("SELECT name FROM rss_sources");
 		
-		// $results = $q->fetchAll(); 
+		$out['items'] = _getSource('tagesschau');
+		$out['name'] = $name;
 		
-
-		
-		$conn = $this->container->get('database_connection');
-		$sql = 'SELECT * FROM rss_sources';
-		$sources = $conn->query($sql);
-
-
-        return $this->render('PolitikportalBundle:Default:index.html.twig', array('name' => $name,'sources' => $sources));
+        return $this->render('PolitikportalBundle:items.html.twig', $out);
         
     }
+    
+    
+    function _getSource($source) {
+    
+    	$sql = 'SELECT * FROM rss_items WHERE source LIKE "' . $source . '"';
+    	return _getDB($sql);
+    	
+    }
+    
+    
+    function _getDB($sql) {
+    
+    	$conn = $this->container->get('database_connection');
+		return $conn->query($sql);
+    
+    }
+    
+    
 }

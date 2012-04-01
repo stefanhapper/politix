@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+     Hallo {{ name }}!
+{% endblock %}
+ 
+
+{% block description %}
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nibh odio, cursus eu cursus placerat, pellentesque vitae justo. Cras eros mi, vehicula viverra pretium vel, sagittis a risus. Cras at lacus ipsum. Suspendisse potenti. In iaculis magna in risus auctor aliquam posuere nunc luctus.
+{% endblock %}
+
+
+{% block main %}
+
+    <div class="items">
+
+    	{% for item in items %}
+        
+        	<h2>{{ item.title }}</h2>
+        	<p>{{ item.description }}</p>
+        	<p>{{ item.source }}</p>
+
+			<br />
+			    
+    	{% else %}
+        	<h2>No sources found</h2>
+    	{% endfor %}
+    
+    </div>
+
+{% endblock %}
