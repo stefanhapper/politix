@@ -14,7 +14,7 @@ class FrontController extends Controller
 		$out['items'] = $this->getSource('tagesschau');
 		$out['name'] = $name;
 		
-        return $this->render('PolitikportalBundle:items.html.twig', $out);
+        return $this->render('PolitikportalBundle:Default:items.html.twig', $out);
         
     }
     
