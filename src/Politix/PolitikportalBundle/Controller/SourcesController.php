@@ -5,7 +5,7 @@ namespace Politix\PolitikportalBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
-class FrontController extends Controller
+class SourcesController extends Controller
 {
     
     public function indexAction($name)
@@ -18,17 +18,9 @@ class FrontController extends Controller
         
     }
     
-    public function myAction($name)
-    {
-		
-		$out['name'] = $name;
-		
-        return $this->render('PolitikportalBundle:Default:my.html.twig', $out);
-        
-    }
     
     
-    function getSource($source) {
+    function getSourceAction($source) {
     
     	$out['source'] = $source;
 		$out['name'] = $source;
