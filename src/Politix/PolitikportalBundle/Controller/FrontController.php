@@ -18,10 +18,19 @@ class FrontController extends Controller
         
     }
     
+    public function myAction($name)
+    {
+		
+		$out['name'] = $name;
+		
+        return $this->render('PolitikportalBundle:Default:my.html.twig', $out);
+        
+    }
+    
     
     function getSource($source) {
     
-    	$sql = 'SELECT * FROM rss_items WHERE source LIKE "' . $source . '"';
+    	$sql = 'SELECT * FROM rss_items WHERE source LIKE "' . $source . '" ORDER BY pubDate DESC LIMIT 0,10';
     	return $this->getDB($sql);
     	
     }
