@@ -11,7 +11,7 @@ class FrontController extends Controller
     public function indexAction($name)
     {
 		
-		$out['items'] = _getSource('tagesschau');
+		$out['items'] = $this->getSource('tagesschau');
 		$out['name'] = $name;
 		
         return $this->render('PolitikportalBundle:items.html.twig', $out);
@@ -19,15 +19,15 @@ class FrontController extends Controller
     }
     
     
-    function _getSource($source) {
+    function getSource($source) {
     
     	$sql = 'SELECT * FROM rss_items WHERE source LIKE "' . $source . '"';
-    	return _getDB($sql);
+    	return $this->getDB($sql);
     	
     }
     
     
-    function _getDB($sql) {
+    function getDB($sql) {
     
     	$conn = $this->container->get('database_connection');
 		return $conn->query($sql);
