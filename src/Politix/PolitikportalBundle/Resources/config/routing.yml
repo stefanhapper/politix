@@ -3,5 +3,5 @@ PolitikportalBundle_homepage:
     defaults: { _controller: PolitikportalBundle:Front:index }
 
 source:
-	pattern:  /source/{name}
-	defaults: { _controller: PolitikportalBundle:Sources:getSource }
+    pattern:  /source/{name}
+    defaults: { _controller: PolitikportalBundle:Sources:getSource }
