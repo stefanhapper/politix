@@ -1,3 +1,7 @@
 PolitikportalBundle_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: PolitikportalBundle:Front:index }
+
+source:
+	pattern:  /source/{name}
+	defaults: { _controller: PolitikportalBundle:Sources:getSource }
