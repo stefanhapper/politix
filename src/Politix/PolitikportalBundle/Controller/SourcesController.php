@@ -23,10 +23,9 @@ class SourcesController extends Controller
     function getSourceAction($source) {
     
     	$out['source'] = $source;
-		$out['name'] = $source;
-
+		
     	$sql = 'SELECT * FROM rss_items WHERE source LIKE "' . $source . '" ORDER BY pubDate DESC LIMIT 0,10';
-    	return $this->getDB($sql);
+    	$out['items'] = $this->getDB($sql);
 		
         return $this->render('PolitikportalBundle:Default:items.html.twig', $out);    
     	
