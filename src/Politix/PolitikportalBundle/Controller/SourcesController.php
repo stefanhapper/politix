@@ -34,7 +34,7 @@ class SourcesController extends Controller {
     
     	require ('/var/www/vhosts/politikportal.eu/subdomains/new/httpdocs/politix/src/Politix/PolitikportalBundle/Model/SourceModel.php');
     	$db = new \Politix\PolitikportalBundle\Model\SourceModel();
-    	$out['sources'] = $db->getSources;
+    	$out['sources'] = $db->getSources();
     	
     	return $this->render('PolitikportalBundle:Default:sources.html.twig', $out);
 
