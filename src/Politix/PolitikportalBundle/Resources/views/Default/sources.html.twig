@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+     All sources
+{% endblock %}
+ 
+
+{% block description %}
+	Showing all sources of Politikportal
+{% endblock %}
+
+
+{% block main %}
+
+	<table>
+
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		
+	  {% for source in sources %}
+	  
+		<tr>
+			<td>{{ source.name }}</td>
+			<td>{{ source.status }}</td>	
+		</tr>
+	
+	  {% else %}
+      	
+      	<tr>
+      		<td colspan="2">No sources found</td>
+
+		</tr>
+		    
+      {% endfor %}
+    
+	  	
+	</table>
+    
+{% endblock %}

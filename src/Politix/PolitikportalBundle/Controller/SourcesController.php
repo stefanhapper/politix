@@ -3,13 +3,12 @@
 namespace Politix\PolitikportalBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Politix\PolitikportalBundle\Model
 
 
-class SourcesController extends Controller
-{
+class SourcesController extends Controller {
     
-    public function indexAction($name)
-    {
+    public function indexAction($name) {
 		
 		$out['items'] = $this->getSource('tagesschau');
 		$out['name'] = $name;
@@ -17,7 +16,6 @@ class SourcesController extends Controller
         return $this->render('PolitikportalBundle:Default:items.html.twig', $out);
         
     }
-    
     
     
     function getSourceAction($source) {
@@ -30,6 +28,17 @@ class SourcesController extends Controller
         return $this->render('PolitikportalBundle:Default:items.html.twig', $out);    
     	
     }
+    
+    
+    function getSourcesAction() {
+    
+    	$db = new Politix\PolitikportalBundle\Model\SourceModel;
+    	$out['sources'] = $db->getSources;
+    	
+    	return $this->render('PolitikportalBundle:Default:sources.html.twig', $out);
+
+    }
+
     
     
     function getDB($sql) {
