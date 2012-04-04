@@ -2,7 +2,7 @@
 
 namespace Politix\PolitikportalBundle\Model;
 
-// use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Doctrine\DBAL\Connection;
 
 
 class SourceModel {
@@ -10,12 +10,12 @@ class SourceModel {
     private $conn;
     
     
-    function __construct($conn) {
+    function __construct(Connection $conn) {
     	
     	$this->conn = $conn;
     	
     }
-    
+
     
     public function getSources($start = 0, $max = 10) {
     
