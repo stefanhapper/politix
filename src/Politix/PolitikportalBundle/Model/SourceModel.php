@@ -21,7 +21,7 @@ class SourceModel {
     
         // $conn = $this->container->get('database_connection');
         
-    	$sql = "SELECT * FROM sources LIMIT $start,$max";
+    	$sql = "SELECT * FROM rss_sources LIMIT $start,$max";
     	
 		return $this->conn->query($sql);
 		    	
