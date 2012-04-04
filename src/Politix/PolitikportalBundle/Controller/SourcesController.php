@@ -21,11 +21,12 @@ class SourcesController extends Controller {
     }
     
     
-    function getSourcesAction($page) {
+    function getSourcesAction($page = 1) {
         	
     	$db = $this->get('SourceModel');
     	
     	$out['sources'] = $db->getSources($page);
+    	$out['page'] = $page;
     	
     	return $this->render('PolitikportalBundle:Default:sources.html.twig', $out);
 
