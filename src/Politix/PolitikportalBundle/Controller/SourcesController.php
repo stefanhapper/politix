@@ -3,7 +3,7 @@
 namespace Politix\PolitikportalBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-// use Politix\PolitikportalBundle\Model;
+use Politix\PolitikportalBundle\Model;
 
 
 class SourcesController extends Controller {
