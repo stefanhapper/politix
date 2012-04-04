@@ -11,6 +11,7 @@ if (!in_array(@$_SERVER['REMOTE_ADDR'], array(
     '213.49.253.49',
     '78.22.168.46',
     '62.235.186.42',
+    '213.49.242.3',
     '::1',
 ))) {
     header('HTTP/1.0 403 Forbidden');
