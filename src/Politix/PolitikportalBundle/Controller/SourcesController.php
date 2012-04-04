@@ -7,16 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
 class SourcesController extends Controller {
-    
-    public function indexAction($name) {
-		
-		$out['items'] = $this->getSource('tagesschau');
-		$out['name'] = $name;
-		
-        return $this->render('PolitikportalBundle:Default:items.html.twig', $out);
         
-    }
-    
     
     function getSourceAction($source) {
     
@@ -30,11 +21,11 @@ class SourcesController extends Controller {
     }
     
     
-    function getSourcesAction() {
+    function getSourcesAction($page) {
         	
     	$db = $this->get('SourceModel');
     	
-    	$out['sources'] = $db->getSources();
+    	$out['sources'] = $db->getSources($page);
     	
     	return $this->render('PolitikportalBundle:Default:sources.html.twig', $out);
 

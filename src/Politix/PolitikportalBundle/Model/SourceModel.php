@@ -8,6 +8,7 @@ use Doctrine\DBAL\Connection;
 class SourceModel {
     
     private $conn;
+    private $pageSize = 10;
     
     
     function __construct(Connection $conn) {
@@ -15,11 +16,20 @@ class SourceModel {
     	$this->conn = $conn;
     	
     }
+    
+    
+    public function setPagesize($pagesize) {
+    
+    	$this->pagesize = $pagesize;
+    	
+    }
 
     
-    public function getSources($start = 0, $max = 10) {
-            
-    	$sql = "SELECT * FROM rss_sources LIMIT $start,$max";
+    public function getSources($page = 1) {
+        
+        $start = $this->pagesize * ($page - 1);
+        
+    	$sql = "SELECT * FROM rss_sources LIMIT $start,$this->pagesize";
     	
 		return $this->conn->query($sql);
 		    	
