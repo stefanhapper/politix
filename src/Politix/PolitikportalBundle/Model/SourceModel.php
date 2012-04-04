@@ -2,18 +2,28 @@
 
 namespace Politix\PolitikportalBundle\Model;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+// use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
-class SourceModel extends Controller {
+class SourceModel {
+    
+    private $conn;
+    
+    
+    function __construct($conn) {
+    	
+    	$this->conn = $conn;
+    	
+    }
+    
     
     public function getSources($start = 0, $max = 10) {
     
-        $conn = $this->container->get('database_connection');
+        // $conn = $this->container->get('database_connection');
         
     	$sql = "SELECT * FROM sources LIMIT $start,$max";
     	
-		return $conn->query($sql);
+		return $this->conn->query($sql);
 		    	
     }
     
