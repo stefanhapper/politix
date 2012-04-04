@@ -4,17 +4,10 @@ namespace Politix\PolitikportalBundle\Model;
 
 // use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Doctrine\DBAL\Connection;
 
-class SourceModel {
 
-	private $conn = NULL;
-	
-    
-    function __construct(&$controllerObject) {
-    
-    	$this->conn = $controllerObject->container->get('database_connection');        	
-    
-    }
+class SourceModel extends Connection{
     
     
     public function getSources($start = 0, $max = 10) {
