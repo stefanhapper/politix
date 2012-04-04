@@ -32,7 +32,7 @@ class SourcesController extends Controller {
     
     function getSourcesAction() {
     
-    	require ('../Model/SourceModel.php');
+    	require ('/var/www/vhosts/politikportal.eu/subdomains/new/httpdocs/politix/src/Politix/PolitikportalBundle/Model/SourceModel.php');
     	$db = new SourceModel();
     	$out['sources'] = $db->getSources;
     	
