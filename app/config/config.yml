@@ -36,8 +36,9 @@ assetic:
 # Doctrine Configuration
 doctrine:
     dbal:
-        default_connection:    politic
-        politix:
+        default_connection:    politix
+        connections:
+          politix:
             driver:   %database_driver%
             host:     %database_host%
             port:     %database_port%
@@ -63,6 +64,6 @@ jms_security_extra:
     
     
 services:
- model:
-   class:        Politix\PolitikportalBundle\Model\SourceModel
-    arguments:   [ @doctrine.dbal.connection ]
+    model:
+        class:       Politix\PolitikportalBundle\Model\SourceModel
+        arguments:   [ @doctrine.dbal.politix_connection ]
