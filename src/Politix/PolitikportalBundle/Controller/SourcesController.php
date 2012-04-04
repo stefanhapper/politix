@@ -32,7 +32,8 @@ class SourcesController extends Controller {
     
     function getSourcesAction() {
     
-    	$db = new ..\Model\SourceModel();
+    	require ('../Model/SourceModel.php');
+    	$db = new SourceModel();
     	$out['sources'] = $db->getSources;
     	
     	return $this->render('PolitikportalBundle:Default:sources.html.twig', $out);
