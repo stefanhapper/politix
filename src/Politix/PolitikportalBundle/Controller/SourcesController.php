@@ -34,7 +34,7 @@ class SourcesController extends Controller {
     
     	require ('/var/www/vhosts/politikportal.eu/subdomains/new/httpdocs/politix/src/Politix/PolitikportalBundle/Model/SourceModel.php');
     	
-    	$config = new \Doctrine\DBAL\Configuration();
+    	$config = new \Doctrine\DBAL\Driver();
 
 		$params = array(
     		'dbname' => 'politikportal',
