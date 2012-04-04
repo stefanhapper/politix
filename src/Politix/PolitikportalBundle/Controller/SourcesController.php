@@ -34,17 +34,10 @@ class SourcesController extends Controller {
     
     	require ('/var/www/vhosts/politikportal.eu/subdomains/new/httpdocs/politix/src/Politix/PolitikportalBundle/Model/SourceModel.php');
     	
-    	$config = new \Doctrine\DBAL\Driver();
+    	//$config = new \Doctrine\DBAL\Driver();
 
-		$params = array(
-    		'dbname' => 'politikportal',
-    		'user' => 'politikportal',
-   			'password' => 'p2008db',
-    		'host' => 'localhost',
-			'driver' => 'pdo_mysql',
-		);
 		    	
-    	$db = new \Politix\PolitikportalBundle\Model\SourceModel($params,$config);
+    	$db = new \Politix\PolitikportalBundle\Model\SourceModel();
     	$out['sources'] = $db->getSources();
     	
     	return $this->render('PolitikportalBundle:Default:sources.html.twig', $out);
