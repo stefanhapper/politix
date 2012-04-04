@@ -3,7 +3,7 @@
 namespace Politix\PolitikportalBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Politix\PolitikportalBundle\Model;
+// use Politix\PolitikportalBundle\Model;
 
 
 class SourcesController extends Controller {
@@ -33,7 +33,7 @@ class SourcesController extends Controller {
     function getSourcesAction() {
     
     	require ('/var/www/vhosts/politikportal.eu/subdomains/new/httpdocs/politix/src/Politix/PolitikportalBundle/Model/SourceModel.php');
-    	$db = new Politix\PolitikportalBundle\Model\SourceModel();
+    	$db = new \Politix\PolitikportalBundle\Model\SourceModel();
     	$out['sources'] = $db->getSources;
     	
     	return $this->render('PolitikportalBundle:Default:sources.html.twig', $out);
