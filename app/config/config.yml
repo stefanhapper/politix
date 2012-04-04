@@ -65,4 +65,4 @@ jms_security_extra:
 services:
  model:
    class:        Politix\PolitikportalBundle\Model\SourceModel
-    arguments:   [@doctrine.dbal.politix_connection]
+    arguments:   [ @doctrine.dbal.connection ]
