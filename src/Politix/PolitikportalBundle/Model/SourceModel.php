@@ -8,7 +8,7 @@ use Doctrine\DBAL\Connection;
 class SourceModel {
     
     private $conn;
-    private $pageSize = 10;
+    private $pagesize = 10;
     
     
     function __construct(Connection $conn) {
