@@ -15,7 +15,7 @@ class MainController extends Controller {
     	
     	foreach ($topics as $topic) {
     	
-    		$out['topics'][] = $TopicModel->getTopic($topic);
+    		$out['rows'][] = $TopicModel->getTopic($topic);
     	
     	}
     	
