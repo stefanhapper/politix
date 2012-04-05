@@ -2,7 +2,7 @@
 
 namespace Politix\PolitikportalBundle\Model;
 
-// use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Connection;
 
 
 class TopicModel {
