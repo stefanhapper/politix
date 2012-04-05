@@ -2,8 +2,8 @@
 	<a class="newstitle bg6 size-{{ item.rank}}" href="/news/192609/" target="_blank">
 		<strong>{{ item.rssTitle }}</strong>
 		<br>
-		<span class="sourcelink">{{ item.sourceName }},&nbsp;{{ item.tspubDate }}</span>
-		<span class="description">{{ item.description }}</span>
+		<span class="sourcelink">{{ item.sourceName }},&nbsp;{{ item.tspubDate|date("j.n.Y") }}</span>
+		<div class="description">{{ item.description }}</div>
 	</a>
 </div>
 
