@@ -53,7 +53,7 @@ class TopicModel {
 		// august long archive
 		// $days = 5;
 
-		$start_ts = mktime() - ($days * 86400) + 20000;
+		$start_ts = time() - ($days * 86400) + 20000;
 	
 		
 		$catcrit = "rss_sources.category != 'nothing'";
