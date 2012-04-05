@@ -13,3 +13,7 @@ sources:
 topics:
     pattern:  /topics
     defaults: { _controller: PolitikportalBundle:Topic:getTopics }
+    
+main:
+    pattern:  /
+    defaults: { _controller: PolitikportalBundle:Main:getHomepage }

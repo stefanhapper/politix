@@ -2,13 +2,15 @@
 
 namespace Politix\PolitikportalBundle\Model;
 
-use Doctrine\DBAL\Connection;
+// use Doctrine\DBAL\Connection;
 
 
 class TopicModel {
     
     private $conn;
-    private $pagesize = 100;
+    private $days = 1.5;
+    private $start_ts = time() - ($days * 86400) + 20000;
+	private $end_ts = mktime (23,59,59,date("m"),date("d"),date("Y"));
     
     
     function __construct(Connection $conn) {
@@ -18,15 +20,8 @@ class TopicModel {
     }
     
     
+    public function setPeriod() {
     
-    public function getHomepage() {
-        
-    	$maxitems = 12;   // in topicsgorup (including first item)
-	
-		$start_ts = mktime (0,0,0,date("m"),date("d"),date("Y"));
-		$end_ts = mktime (23,59,59,date("m"),date("d"),date("Y")) ;
-	
-
 		switch (date('w')) {
 
 			case "6":
@@ -53,17 +48,19 @@ class TopicModel {
 		// august long archive
 		// $days = 5;
 
-		$start_ts = time() - ($days * 86400) + 20000;
-	
-		
-		$catcrit = "rss_sources.category != 'nothing'";
+    	$this->start_ts = time() - ($days * 86400) + 20000;
+    
+    }
+    
+    
+    public function getHomepageTopics() {	
 
+		$this->setPeriod();
+			
 		$sql = "SELECT	topics.url AS topicUrl,
 						topics.id AS id,
 						topics.parent_id,
 						topics.title_at,
-						topics.rank,
-						topics.name,
 						COUNT(rss_items.id) AS rssCount,
 						MAX(rss_items.myDate) AS maxDate,
 						MIN(rss_items.rank) AS maxRank
@@ -74,11 +71,10 @@ class TopicModel {
 				INNER JOIN rss_items ON (topic_links.fid_rss_items = rss_items.id)
 				INNER JOIN rss_sources ON (rss_sources.id = rss_items.source)
 				
-				WHERE	$catcrit AND
-						rss_items.rank <> 2 AND
+				WHERE	rss_items.rank <> 2 AND
 						rss_items.rank < 4 AND
-						(UNIX_TIMESTAMP(rss_items.myDate) > (" . $start_ts . " -1)) AND
-						UNIX_TIMESTAMP(rss_items.myDate) < " . $end_ts . "
+						(UNIX_TIMESTAMP(rss_items.myDate) > (" . $this->start_ts . " -1)) AND
+						UNIX_TIMESTAMP(rss_items.myDate) < " . $this->end_ts . "
 						
 				GROUP BY topics.id
 				
@@ -92,11 +88,36 @@ class TopicModel {
     }
     
     
-    public function getTopic($id) {
-    
-    	// $sql = "SELECT * FROM rss_items WHERE source LIKE '" . $id . "' ORDER BY pubDate DESC LIMIT 0,10";
-    	
-		// return $this->conn->query($sql);
+    public function getTopic($topic) {			
+		
+		$this->setPeriod();
+		
+		$sql = "SELECT	UNIX_TIMESTAMP(pubDate) AS tspubDate,
+						rss_items.id AS rssId, rss_items.lang,rss_items.link,rss_items.title AS rssTitle,
+						rss_items.rank,rss_items.description,
+						rss_items.linktype,
+						rss_items.source,
+						rss_sources.name AS sourceName,rss_sources.web_url AS sourceUrl
+				
+				FROM rss_items
+				
+				INNER JOIN rss_sources ON (rss_items.source = rss_sources.id)
+				LEFT JOIN topic_links ON (topic_links.fid_rss_items = rss_items.id)
+				LEFT JOIN topics ON (topic_links.fid_topics = topics.id)
+				
+				WHERE	(topic_links.fid_topics = " . $topic['id'] . " OR
+							 topics.parent_id = " . $topic['id'] . ") AND
+						rss_items.rank <> 2 AND
+						rss_items.rank < 4 AND
+						(UNIX_TIMESTAMP(myDate) > (" . $this->start_ts . " -1)) AND
+						UNIX_TIMESTAMP(myDate) < " . $this->end_ts . "
+				
+				ORDER BY pubDate DESC
+				
+				LIMIT 0,25";
+			
+			
+		return $this->conn->query($sql);
     
     }
     
