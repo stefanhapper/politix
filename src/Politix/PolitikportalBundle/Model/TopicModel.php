@@ -115,7 +115,7 @@ class TopicModel {
 				LIMIT 0,25";
 			
 			
-		return $this->conn->query($sql);
+		return $this->conn->fetchAll($sql);
     
     }
     
