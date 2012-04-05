@@ -50,8 +50,11 @@ class SourceModel {
     		
     			$current = FALSE;
     			$disabled = FALSE;
-    			if ($page == $i) $current = TRUE;
-    		
+    			if ($page == $i) {
+    				$current = TRUE;
+    				$disabled = TRUE;
+    			}
+    			
     			$pages[] = array('number' => $i, 'current' => $current, 'disabled' => $disabled);
     		
     		} else {
