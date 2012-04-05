@@ -49,7 +49,7 @@ class SourceModel {
     		$current = FALSE;
     		if ($page == $i) $current = TRUE;
     		
-    		$pages[] = array('number' => $i, 'current' = $current);
+    		$pages[] = array('number' => $i, 'current' => $current);
     	
     	}
     	
