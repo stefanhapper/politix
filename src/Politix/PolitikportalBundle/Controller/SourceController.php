@@ -3,10 +3,9 @@
 namespace Politix\PolitikportalBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-// use Politix\PolitikportalBundle\Model;
 
 
-class SourcesController extends Controller {
+class SourceController extends Controller {
         
     
     function getSourceAction($source) {

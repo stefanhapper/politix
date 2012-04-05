@@ -4,11 +4,11 @@ PolitikportalBundle_homepage:
 
 source:
     pattern:  /source/{source}
-    defaults: { _controller: PolitikportalBundle:Sources:getSource }
+    defaults: { _controller: PolitikportalBundle:Source:getSource }
     
 sources:
     pattern:  /sources/{page}
-    defaults: { _controller: PolitikportalBundle:Sources:getSources, page: 1 }
+    defaults: { _controller: PolitikportalBundle:Source:getSources, page: 1 }
     
 topics:
     pattern:  /topics
