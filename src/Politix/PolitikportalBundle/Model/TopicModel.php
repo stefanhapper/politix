@@ -17,7 +17,7 @@ class TopicModel {
     	
     	$this->conn = $conn;
     	
-    	$this->setPeriod;
+    	$this->setPeriod();
     	
     }
     
