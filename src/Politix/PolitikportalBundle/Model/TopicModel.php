@@ -91,8 +91,12 @@ class TopicModel {
     public function getTopic($topic) {			
 				
 		$sql = "SELECT	UNIX_TIMESTAMP(pubDate) AS tspubDate,
-						rss_items.id AS rssId, rss_items.lang,rss_items.link,rss_items.title AS rssTitle,
-						rss_items.rank,rss_items.description,
+						rss_items.id AS rssId,
+						rss_items.lang,
+						rss_items.link,
+						rss_items.title AS rssTitle,
+						rss_items.rank,
+						rss_items.description,
 						rss_items.linktype,
 						rss_items.source,
 						rss_sources.name AS sourceName,rss_sources.web_url AS sourceUrl
