@@ -1,0 +1,15 @@
+<div class="p-pager btn-group">
+	
+	  {% for page in pages %}
+		
+		<a class="btn btn-mini{% if page.current %} btn-primary{% endif %}{% if page.disabled %} disabled{% endif %}" href="/sources/{{ page.number }}">{{ page.number }}</a>
+				
+	  {% else %}
+		
+		No paging.
+		
+	  {% endfor %}
+		
+	</div>
+
+{% endblock %}

@@ -40,7 +40,7 @@
 	  {% for source in sources %}
 	  
 		<tr>
-			<td><a href="/source/{{ source.id }}"></a><strong>{{ source.name }}</strong></a></td>
+			<td><a href="/source/{{ source.id }}"><strong>{{ source.name }}</strong></a></td>
 			<td>{{ source.status }}</td>	
 			<td>{{ source.lang }}</td>	
 			<td>{{ source.type }}</td>	
@@ -58,18 +58,4 @@
 	  	
 	</table>
 	
-	<div class="p-pager btn-group">
-	
-	  {% for page in pages %}
-		
-		<a class="btn btn-mini{% if page.current %} btn-primary{% endif %}{% if page.disabled %} disabled{% endif %}" href="/sources/{{ page.number }}">{{ page.number }}</a>
-				
-	  {% else %}
-		
-		No paging.
-		
-	  {% endfor %}
-		
-	</div>
-    
-{% endblock %}
+	{% include 'pager.html' %}
