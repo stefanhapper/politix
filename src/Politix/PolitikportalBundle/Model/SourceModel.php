@@ -46,7 +46,7 @@ class SourceModel {
     	    	
     	for ($i=1;$i <= $totalpages;$i++) {
     	
-    		if (($i == 1) or ($page - $i < 10) or ($i - $page > -10) or ($i == $totalpages)) {
+    		if (($i == 1) or ($page - $i < 5) or ($i - $page > -5) or ($i == $totalpages)) {
     		
     			$current = FALSE;
     			if ($page == $i) $current = TRUE;
