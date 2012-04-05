@@ -12,4 +12,4 @@ sources:
     
 topics:
     pattern:  /topics
-    defaults: { _controller: PolitikportalBundle:Topic:getHomepage }
+    defaults: { _controller: PolitikportalBundle:Topic:getTopics }
