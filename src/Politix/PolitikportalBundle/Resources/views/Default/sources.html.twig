@@ -12,20 +12,24 @@
 
 {% block main %}
 
-	<table>
+	<table class="table table-bordered">
 
 		<thead>
 			<tr>
 				<th>Name</th>
 				<th>Status</th>
+				<th>Language</th>
+				<th>Type</th>
 			</tr>
 		</thead>
 		
 	  {% for source in sources %}
 	  
 		<tr>
-			<td>{{ source.name }}</td>
+			<td><strong>{{ source.name }}</strong></td>
 			<td>{{ source.status }}</td>	
+			<td>{{ source.lang }}</td>	
+			<td>{{ source.type }}</td>	
 		</tr>
 	
 	  {% else %}
