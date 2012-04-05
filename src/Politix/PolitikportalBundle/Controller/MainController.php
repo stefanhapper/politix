@@ -13,11 +13,14 @@ class MainController extends Controller {
     	
     	$topics = $TopicModel->getHomepageTopics();
     	
+    	$out['rows'][] = 'empty';
+
     	foreach ($topics as $topic) {
     	
     		$out['rows'][] = $TopicModel->getTopic($topic);
     	
     	}
+    	
     	
     	return $this->render('PolitikportalBundle:Default:dump.html.twig', $out);
         
