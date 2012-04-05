@@ -113,10 +113,10 @@ class TopicModel {
 						rss_items.rank < 4 AND
 						(UNIX_TIMESTAMP(myDate) > (" . $this->start_ts . " -1)) AND
 						UNIX_TIMESTAMP(myDate) < " . $this->end_ts . "
-				
-				ORDER BY rss_items.rank ASC, pubDate DESC
-				
+
 				GROUP BY rss_items.id
+				
+				ORDER BY rss_items.rank ASC, pubDate DESC				
 				
 				LIMIT 0,25";
 			
