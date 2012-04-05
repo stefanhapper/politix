@@ -67,3 +67,7 @@ services:
     SourceModel:
         class:       Politix\PolitikportalBundle\Model\SourceModel
         arguments:   [ @doctrine.dbal.politix_connection ]
+
+    TopicModel:
+        class:       Politix\PolitikportalBundle\Model\TopicModel
+        arguments:   [ @doctrine.dbal.politix_connection ]
