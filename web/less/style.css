@@ -6389,5 +6389,15 @@ body {
 .items {
   border-bottom: 1px solid #E0DFEE;
   padding: 10px 40px;
-  left-mergin: -25px;
+  left-margin: -25px;
+  border-right: 1px solid #E0DFEE;
+}
+.size-0 strong {
+  font-size: 25px;
+}
+.size-1 {
+  font-size: 20px;
+}
+.size-3 strong {
+  font-size: 15px;
 }
