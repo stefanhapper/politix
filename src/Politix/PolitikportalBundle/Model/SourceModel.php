@@ -42,7 +42,7 @@ class SourceModel {
     	
     	$result = $this->conn->fetchAssoc($sql);
     	
-    	$totalpages = round($result[0]['num'] / $this->pagesize);
+    	$totalpages = round($result['num'] / $this->pagesize);
     	    	
     	for ($i=1;$i <= $totalpages;$i++) {
     		
