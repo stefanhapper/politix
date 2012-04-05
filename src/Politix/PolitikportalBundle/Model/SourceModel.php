@@ -34,6 +34,15 @@ class SourceModel {
 		return $this->conn->query($sql);
 		    	
     }
+    
+    
+    public function getSource($id) {
+    
+    	$sql = "SELECT * FROM rss_items WHERE source LIKE '" . id . "' ORDER BY pubDate DESC LIMIT 0,10";
+    	
+		return $this->conn->query($sql);
+    
+    }
 
 
     public function getPages($page = 1) {
