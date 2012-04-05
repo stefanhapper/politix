@@ -17,12 +17,12 @@ class MainController extends Controller {
 
     	foreach ($topics as $topic) {
     	
-    		$out['rows'][] = $TopicModel->getTopic($topic);
+    		$out['topics'][] = $TopicModel->getTopic($topic);
     	
     	}
     	
     	
-    	return $this->render('PolitikportalBundle:Default:dump.html.twig', $out);
+    	return $this->render('PolitikportalBundle:Default:topics.html.twig', $out);
         
     }
         
