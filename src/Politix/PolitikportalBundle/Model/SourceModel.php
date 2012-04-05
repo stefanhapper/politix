@@ -40,7 +40,7 @@ class SourceModel {
                 
     	$sql = "SELECT COUNT(id) AS num FROM rss_sources";
     	
-    	$result = $this->conn->query($sql);
+    	$result = $this->conn->fetchAssoc($sql);
     	
     	$totalpages = round($result[0]['num'] / $this->pagesize);
     	    	
