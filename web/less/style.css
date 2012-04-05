@@ -6385,3 +6385,7 @@ body {
 .pad {
   padding: 25px;
 }
+.pagination {
+  margin: 20px 0;
+  text-align: center;
+}
