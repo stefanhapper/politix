@@ -45,12 +45,16 @@ class SourceModel {
     	$totalpages = round($result['num'] / $this->pagesize);
     	    	
     	for ($i=1;$i <= $totalpages;$i++) {
-    		
-    		$current = FALSE;
-    		if ($page == $i) $current = TRUE;
-    		
-    		$pages[] = array('number' => $i, 'current' => $current);
     	
+    		if (($i == 1) or ($totalpages - $i < 10) or ($i - $totalpages > -10) or ($i == $totalpages)) {
+    		
+    			$current = FALSE;
+    			if ($page == $i) $current = TRUE;
+    		
+    			$pages[] = array('number' => $i, 'current' => $current);
+    		
+    		}
+    		
     	}
     	
     	return $pages;
