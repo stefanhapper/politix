@@ -46,9 +46,15 @@
 	
 	<div class="btn-group">
 	
-		<a class="btn btn-mini" href="/sources/1">1</a>
-		<a class="btn btn-mini" href="/sources/2">2</a>
-		<a class="btn btn-mini" href="/sources/3">3</a>
+	  {% for page in pages %}
+		
+		<a class="btn btn-mini{% if page.current %} btn-primary{% endif %}" href="/sources/{{ page.number }}">{{ page.number }}</a>
+				
+	  {% else %}
+		
+		No paging.
+		
+	  {% endfor %}
 		
 	</div>
     
