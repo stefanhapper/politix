@@ -11,7 +11,7 @@ class TopicController extends Controller {
 		
         $topics = $this->get('TopicModel');
     	
-    	$out['rows'] = $topics->getHomepage();
+    	$out['rows'] = $topics->getHomepageTopics();
     	
     	return $this->render('PolitikportalBundle:Default:dump.html.twig', $out);
         
