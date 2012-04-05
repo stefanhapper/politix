@@ -9,7 +9,7 @@ class TopicModel {
     
     private $conn;
     private $days = 1.5;
-    private $start_ts = time() - ($days * 86400) + 20000;
+    private $start_ts = time() - ($this->days * 86400) + 20000;
 	private $end_ts = mktime (23,59,59,date("m"),date("d"),date("Y"));
     
     
