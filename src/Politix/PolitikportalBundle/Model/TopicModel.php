@@ -60,7 +60,6 @@ class TopicModel {
 			
 		$sql = "SELECT	topics.url AS topicUrl,
 						topics.id AS id,
-						topics.parent_id,
 						topics.title_at,
 						COUNT(rss_items.id) AS rssCount,
 						MAX(rss_items.myDate) AS maxDate,
