@@ -6389,15 +6389,21 @@ body {
 .items {
   border-bottom: 1px solid #E0DFEE;
   padding: 10px 40px;
-  left-margin: -25px;
+  margin-left: -25px;
   border-right: 1px solid #E0DFEE;
+}
+.items a.newstitle strong {
+  font-family: Trebuchet MS, Sans-Serif;
 }
 .size-0 strong {
   font-size: 25px;
 }
-.size-1 {
+.size-1 strong {
   font-size: 20px;
 }
 .size-3 strong {
   font-size: 15px;
+}
+a {
+  color: #006;
 }
