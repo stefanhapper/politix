@@ -121,7 +121,25 @@ class TopicModel {
 				LIMIT 0,25";
 			
 			
-		return $this->conn->fetchAll($sql);
+		return $this->removeDouble($this->conn->fetchAll($sql));
+    
+    }
+    
+    public function removeDouble($topic) {
+    
+    	$items = array();
+    	
+    	$cleanTopic = array();
+    	
+    	foreach ($topic as $item) {
+    	
+    		if (!in_array($item['rssId'],$items)) {
+    			$items[] = $item['rssId'];
+    			$cleanTopic[] = $item;
+    		}
+    	}
+    
+    	return $cleanTopic;
     
     }
     
