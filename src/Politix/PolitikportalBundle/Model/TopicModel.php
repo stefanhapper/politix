@@ -9,13 +9,15 @@ class TopicModel {
     
     private $conn;
     private $days = 1.5;
-    private $start_ts = time() - ($this->days * 86400) + 20000;
-	private $end_ts = mktime (23,59,59,date("m"),date("d"),date("Y"));
+    private $start_ts = 0;
+	private $end_ts = 0;
     
     
     function __construct(Connection $conn) {
     	
     	$this->conn = $conn;
+    	
+    	$this->setPeriod;
     	
     }
     
@@ -49,13 +51,12 @@ class TopicModel {
 		// $days = 5;
 
     	$this->start_ts = time() - ($days * 86400) + 20000;
+    	$this->end_ts = mktime (23,59,59,date("m"),date("d"),date("Y"));
     
     }
     
     
     public function getHomepageTopics() {	
-
-		$this->setPeriod();
 			
 		$sql = "SELECT	topics.url AS topicUrl,
 						topics.id AS id,
@@ -89,9 +90,7 @@ class TopicModel {
     
     
     public function getTopic($topic) {			
-		
-		$this->setPeriod();
-		
+				
 		$sql = "SELECT	UNIX_TIMESTAMP(pubDate) AS tspubDate,
 						rss_items.id AS rssId, rss_items.lang,rss_items.link,rss_items.title AS rssTitle,
 						rss_items.rank,rss_items.description,
