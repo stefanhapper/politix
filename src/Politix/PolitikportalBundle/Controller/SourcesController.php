@@ -14,6 +14,7 @@ class SourcesController extends Controller {
     	$db = $this->get('SourceModel');
     	
     	$out['items'] = $db->getSource($source);
+    	$out['source'] = $source;
     	
         return $this->render('PolitikportalBundle:Default:items.html.twig', $out);    
 
