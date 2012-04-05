@@ -8,4 +8,4 @@ source:
     
 sources:
     pattern:  /sources/{page}
-    defaults: { _controller: PolitikportalBundle:Sources:getSources }
+    defaults: { _controller: PolitikportalBundle:Sources:getSources, page: 1 }
