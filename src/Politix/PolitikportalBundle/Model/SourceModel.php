@@ -49,9 +49,10 @@ class SourceModel {
     		if (($i == 1) or (($i - $page > -5) and ($i - $page < 5)) or ($i == $totalpages)) {
     		
     			$current = FALSE;
+    			$disabled = FALSE;
     			if ($page == $i) $current = TRUE;
     		
-    			$pages[] = array('number' => $i, 'current' => $current);
+    			$pages[] = array('number' => $i, 'current' => $current, 'disabled' => $disabled);
     		
     		}
     		
