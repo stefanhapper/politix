@@ -43,6 +43,37 @@ class SourceModel {
 		return $this->conn->query($sql);
     
     }
+    
+    public function addSid() {
+    
+    	$sql = "SELECT id,sid FROM rss_sources";
+    	
+    	$result = $this->conn->fetchAll($sql);
+    	
+    	$sources = array();
+    	
+    	foreach ($result as $source) {
+    		$sources[$source['id']]['sid'] = $source['sid'];
+    		$sources[$source['id']]['source'] = $source['id'];
+    		$sources[$source['id']]['count'] = 0;
+    	}
+    	
+    	
+    	$sql = "SELECT id,source FROM rss_items WHERE id > 170000";
+    
+    	$items = $this->conn->fetchAll($sql);
+  
+  		foreach ($items as $item) {
+  		
+  			$sql = "UPDATE rss_items SET sid = " . $sources[$item['source']]['sid'] . " WHERE id = " . $item['id'];
+  			
+  			$sources[$item['source']]['count'] += 1;
+  			
+  		}
+  		
+  		return $sources;
+    	
+    }
 
 
     public function getPages($page = 1) {
