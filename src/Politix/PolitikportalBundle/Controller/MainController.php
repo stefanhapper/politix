@@ -14,14 +14,18 @@ class MainController extends Controller {
     	$topics = $TopicModel->getHomepageTopics();
     	
     	$out['rows'][] = 'empty';
-    	$out['heading'] = date('r');
 
     	foreach ($topics as $topic) {
     	
     		$out['topics'][] = $TopicModel->getTopic($topic);
     	
     	}
+
     	
+    	$lastModified = new \DateTime();
+    	$lastModified->createFromFormat('U',apc_fetch('homeLastModified'));
+
+    	$out['heading'] = $lastModified->format('r');
     	
     	$response = $this->render('PolitikportalBundle:Default:topics.html.twig', $out);
     	
@@ -30,8 +34,6 @@ class MainController extends Controller {
 		$response->setMaxAge(60);
 		$response->setSharedMaxAge(60);
 
-    	$lastModified = new \DateTime();
-    	$lastModified->createFromFormat('U',apc_fetch('homeLastModified'));
     	
     	$response->setLastModified($lastModified);
     	$response->isNotModified($this->getRequest());
