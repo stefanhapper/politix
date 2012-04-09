@@ -14,6 +14,7 @@ class MainController extends Controller {
     	$topics = $TopicModel->getHomepageTopics();
     	
     	$out['rows'][] = 'empty';
+    	$out['heading'] = date('r');
 
     	foreach ($topics as $topic) {
     	
