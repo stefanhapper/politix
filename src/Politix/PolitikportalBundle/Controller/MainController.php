@@ -22,7 +22,15 @@ class MainController extends Controller {
     	}
     	
     	
-    	return $this->render('PolitikportalBundle:Default:topics.html.twig', $out);
+    	$response = $this->render('PolitikportalBundle:Default:topics.html.twig', $out);
+    	
+    	    	
+    	$lastModified = new \DateTime('yesterday');
+    	
+    	$response->setLastModified($lastModified);
+    	$response->isNotModified($this->getRequest());
+
+    	return $response;    	
         
     }
         
