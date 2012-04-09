@@ -21,10 +21,9 @@ class MainController extends Controller {
     	
     	$response->setLastModified($lastModified);
     	
-    	if ($response->isNotModified($this->getRequest()))
-    		return $response;
-    	}
-
+    	if ($response->isNotModified($this->getRequest())) return $response;
+    	
+    	
 
     	$out['heading'] = $lastModified->format('r');
 
