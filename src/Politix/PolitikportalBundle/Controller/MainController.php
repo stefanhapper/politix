@@ -26,7 +26,7 @@ class MainController extends Controller {
     	$out['rows'][] = $response->__toString();
     	$out['rows'][] = $request->__toString();
     	
-    	$output = $out['rows'][0] . '<br><hr><br>' . $out['rows'][1];
+    	$output = '<pre>' . $out['rows'][0] . '<br><hr><br>' . $out['rows'][1] . '</pre>';
     	
     	$response->setContent($output);
     	
