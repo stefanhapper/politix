@@ -32,12 +32,12 @@ class MainController extends Controller {
 			
 		}
 
-		$lastModified = new \DateTime('@' . $ApcLastModified);    	
+		$timezone = new DateTimeZone('Europe/Brussels');
+		$lastModified = new \DateTime('@' . $ApcLastModified,$timezone);    	
     	
     	$this->response->setLastModified($lastModified);
     	
-	    $request = $this->getRequest();
-    	
+	    $request = $this->getRequest();    	
 		
     	if ($this->response->isNotModified($this->getRequest())) {
     		return $this->response;
@@ -51,8 +51,6 @@ class MainController extends Controller {
 
     	$topics = $TopicModel->getHomepageTopics();
     	
-    	// $out['rows'][] = 'empty';
-
     	foreach ($topics as $topic) {
     		$out['topics'][] = $TopicModel->getTopic($topic);
     	}
