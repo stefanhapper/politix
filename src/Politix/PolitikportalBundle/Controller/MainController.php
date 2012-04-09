@@ -30,7 +30,8 @@ class MainController extends Controller {
 		$response->setMaxAge(60);
 		$response->setSharedMaxAge(60);
 
-    	$lastModified = new \DateTime::createFromFormat('U',apc_fetch('homeLastModified'));
+    	$lastModified = new \DateTime();
+    	$lastModified->createFromFormat('U',apc_fetch('homeLastModified'));
     	
     	$response->setLastModified($lastModified);
     	$response->isNotModified($this->getRequest());
