@@ -9,6 +9,25 @@ class MainController extends Controller {
     
     public function getHomepageAction() {
 		
+		$lastModified = new \DateTime();
+    	$lastModified->createFromFormat('U',apc_fetch('homeLastModified'));
+
+    	
+    	$response = new Response();
+    
+    	$response->setPublic();
+		$response->setMaxAge(60);
+		$response->setSharedMaxAge(60);
+    	
+    	$response->setLastModified($lastModified);
+    	
+    	if ($response->isNotModified($this->getRequest()))
+    		return $response;
+    	}
+
+
+    	$out['heading'] = $lastModified->format('r');
+
         $TopicModel = $this->get('TopicModel');
     	
     	$topics = $TopicModel->getHomepageTopics();
@@ -20,23 +39,8 @@ class MainController extends Controller {
     		$out['topics'][] = $TopicModel->getTopic($topic);
     	
     	}
-
     	
-    	$lastModified = new \DateTime();
-    	$lastModified->createFromFormat('U',apc_fetch('homeLastModified'));
-
-    	$out['heading'] = $lastModified->format('r');
-    	
-    	$response = $this->render('PolitikportalBundle:Default:topics.html.twig', $out);
-    	
-    	
-    	$response->setPublic();
-		$response->setMaxAge(60);
-		$response->setSharedMaxAge(60);
-
-    	
-    	$response->setLastModified($lastModified);
-    	$response->isNotModified($this->getRequest());
+    	$response->setContent($this->render('PolitikportalBundle:Default:topics.html.twig', $out));
 
     	return $response;    	
         
