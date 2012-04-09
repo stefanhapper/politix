@@ -31,12 +31,16 @@ body {
 
 .items {
 	border-bottom: 1px solid #E0DFEE;
-	padding: 10px 40px;
+	padding: 15px 40px;
 	margin-left: -25px;
 	border-right: 1px solid #E0DFEE;
 }
 
-.items a.newstitle strong { font-family: Trebuchet MS, Sans-Serif; }
+.item {
+	padding: 10px 0;
+}
+
+.item a.newstitle strong { font-family: Trebuchet MS, Sans-Serif; }
 
 .size-0 strong { font-size: 25px; }
 
@@ -44,7 +48,7 @@ body {
 
 .size-3 strong { font-size: 15px; }
 
-.items .description {
+.item .description {
     font-size: 11px;
     line-height: 14px;
     margin: 0 0 5px 0;
@@ -52,6 +56,35 @@ body {
 }
 
 
+.item a.newstitle:hover {
+	text-decoration: none;	
+}
+
+.item a.newstitle:hover strong {
+	text-decoration: underline;
+}
+
+.item a.newstitle:hover .description,
+.item a.newstitle:hover .sourcelink {
+	text-decoration: none;
+}
+
+
+.item .sourcelink {
+	font-size: 10px;
+	color: #669;
+	margin: 0 0 0px 0;
+	text-decoration: none;
+}
+
+.item .description .source {
+	font-weight: bold;
+}
+
 a {
 	color: #006;
+}
+
+a:hover {
+	color: #009;
 }

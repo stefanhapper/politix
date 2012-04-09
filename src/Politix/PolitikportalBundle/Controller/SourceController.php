@@ -33,4 +33,14 @@ class SourceController extends Controller {
     }
     
     
+    function addSidAction() {
+        	
+    	$db = $this->get('SourceModel');
+    	
+    	$out['rows'] = $db->addSid();
+    	
+    	return $this->render('PolitikportalBundle:Default:dumP.html.twig', $out);
+
+    }
+    
 }

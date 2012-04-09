@@ -3,28 +3,66 @@
 namespace Politix\PolitikportalBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use Symfony\Component\HttpFoundation\Response;
 
 class MainController extends Controller {
+
+	var $response = FALSE;
+	
+	function __construct() {
+	
+		$this->response = new Response();
+	
+	    $this->response->setPublic();
+		$this->response->setMaxAge(60);
+		$this->response->setSharedMaxAge(60);
+		
+		//date_default_timezone_set("Europe/Brussels");
+
+	}
+    
     
     public function getHomepageAction() {
 		
-        $TopicModel = $this->get('TopicModel');
-    	
-    	$topics = $TopicModel->getHomepageTopics();
-    	
-    	$out['rows'][] = 'empty';
+		if (apc_fetch('homeLastModified')) {
+		
+			$ApcLastModified = apc_fetch('homeLastModified');
+			
+		} else {
+		
+			$ApcLastModified = time();
+			
+		}
 
-    	foreach ($topics as $topic) {
+		$timezone = new \DateTimeZone('Europe/Brussels');
+		
+		$lastModified = new \DateTime('@' . $ApcLastModified);
+    	$lastModified->setTimezone($timezone);
     	
-    		$out['topics'][] = $TopicModel->getTopic($topic);
+    	$this->response->setLastModified($lastModified);
     	
+	    $request = $this->getRequest();    	
+		
+    	if ($this->response->isNotModified($this->getRequest())) {
+    		return $this->response;
     	}
     	
     	
-    	return $this->render('PolitikportalBundle:Default:topics.html.twig', $out);
-        
-    }
-        
+    	$out['heading'] = $lastModified->format('r');
+
+        $TopicModel = $this->get('TopicModel');
+    	
+
+    	$topics = $TopicModel->getHomepageTopics();
+    	
+    	foreach ($topics as $topic) {
+    		$out['topics'][] = $TopicModel->getTopic($topic);
+    	}
+    	
+    	$this->response->setContent($this->render('PolitikportalBundle:Default:topics.html.twig', $out));
+
+    	return $this->response;    
+    	
+    }        
     
 }
