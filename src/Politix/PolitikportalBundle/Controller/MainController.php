@@ -24,7 +24,11 @@ class MainController extends Controller {
     	
     	$response = $this->render('PolitikportalBundle:Default:topics.html.twig', $out);
     	
-    	    	
+    	
+    	$response->setPublic();
+		$response->setMaxAge(60);
+		$response->setSharedMaxAge(60);
+
     	$lastModified = new \DateTime('yesterday');
     	
     	$response->setLastModified($lastModified);
