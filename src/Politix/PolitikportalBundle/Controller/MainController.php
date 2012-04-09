@@ -28,7 +28,7 @@ class MainController extends Controller {
 			
 		} else {
 		
-			$ApcLastModified = 0;
+			$ApcLastModified = time();
 			
 		}
 
