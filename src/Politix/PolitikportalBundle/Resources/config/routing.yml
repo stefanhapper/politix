@@ -22,3 +22,6 @@ addsid:
     pattern:  /addSid
     defaults: { _controller: PolitikportalBundle:Source:AddSid }
     
+testCache:
+    pattern:  /testCache
+    defaults: { _controller: PolitikportalBundle:Main:testCache }

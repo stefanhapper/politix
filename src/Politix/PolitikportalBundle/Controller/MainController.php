@@ -37,6 +37,20 @@ class MainController extends Controller {
     	return $response;    	
         
     }
+    
+	
+	public function testCacheAction() {
+	
+		$response = new Response(date('r'));
+
+		$response->setPublic();
+
+		$response->setMaxAge(60);
+		$response->setSharedMaxAge(60);
+
+		return $response;
+	
+	}
         
     
 }
