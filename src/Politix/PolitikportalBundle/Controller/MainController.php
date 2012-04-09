@@ -21,14 +21,21 @@ class MainController extends Controller {
     	
     	$response->setLastModified($lastModified);
     	
-    	if ($response->isNotModified($this->getRequest())) return $response;
+    	$out['rows'][] = $response->__toString()
+    	$out['rows'][] = $request->__toString();
+    	
+    	$this->render('PolitikportalBundle:Default:dump.html.twig', $out);
+
+
+    	// if ($response->isNotModified($this->getRequest())) return $response;
     	
     	
 
-    	$out['heading'] = $lastModified->format('r');
+    	// $out['heading'] = $lastModified->format('r');
 
-        $TopicModel = $this->get('TopicModel');
+        // $TopicModel = $this->get('TopicModel');
     	
+/*
     	$topics = $TopicModel->getHomepageTopics();
     	
     	$out['rows'][] = 'empty';
@@ -42,6 +49,7 @@ class MainController extends Controller {
     	$response->setContent($this->render('PolitikportalBundle:Default:topics.html.twig', $out));
 
     	return $response;    	
+*/
         
     }
     
