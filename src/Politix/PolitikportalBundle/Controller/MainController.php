@@ -3,7 +3,7 @@
 namespace Politix\PolitikportalBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use Symfony\Component\HttpFoundation\Response;
 
 class MainController extends Controller {
     
