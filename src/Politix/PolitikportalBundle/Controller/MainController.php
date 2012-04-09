@@ -23,6 +23,8 @@ class MainController extends Controller {
     	
     	$request = $this->getRequest();
     	
+    	/*
+    	
     	$out['rows'][] = $response->__toString();
     	$out['rows'][] = $request->__toString();
     	
@@ -36,9 +38,9 @@ class MainController extends Controller {
     	
     	return $response;
     	
-    	/*return $this->render('PolitikportalBundle:Default:dump.html.twig', $out);
+    	return $this->render('PolitikportalBundle:Default:dump.html.twig', $out);
 
-
+		*/
 		
     	if ($response->isNotModified($this->getRequest())) {
     		return $response;
@@ -64,7 +66,7 @@ class MainController extends Controller {
 
     	return $response;    	
 
-        } */
+        }
     	
     }
     
