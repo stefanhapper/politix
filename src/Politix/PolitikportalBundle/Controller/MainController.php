@@ -26,7 +26,7 @@ class MainController extends Controller {
     	$out['rows'][] = $response->__toString();
     	$out['rows'][] = $request->__toString();
     	
-    	$this->render('PolitikportalBundle:Default:dump.html.twig', $out);
+    	return $this->render('PolitikportalBundle:Default:dump.html.twig', $out);
 
 
     	// if ($response->isNotModified($this->getRequest())) return $response;
