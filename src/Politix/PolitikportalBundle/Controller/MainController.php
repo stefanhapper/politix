@@ -32,7 +32,7 @@ class MainController extends Controller {
 			
 		}
 
-		$timezone = new DateTimeZone('Europe/Brussels');
+		$timezone = new \DateTimeZone('Europe/Brussels');
 		$lastModified = new \DateTime('@' . $ApcLastModified,$timezone);    	
     	
     	$this->response->setLastModified($lastModified);
