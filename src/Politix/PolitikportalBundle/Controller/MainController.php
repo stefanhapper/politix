@@ -21,7 +21,7 @@ class MainController extends Controller {
     	
     	$response->setLastModified($lastModified);
     	
-    	$out['rows'][] = $response->__toString()
+    	$out['rows'][] = $response->__toString();
     	$out['rows'][] = $request->__toString();
     	
     	$this->render('PolitikportalBundle:Default:dump.html.twig', $out);
