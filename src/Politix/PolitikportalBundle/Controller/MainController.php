@@ -21,6 +21,8 @@ class MainController extends Controller {
     	
     	$response->setLastModified($lastModified);
     	
+    	$request = $this->getRequest;
+    	
     	$out['rows'][] = $response->__toString();
     	$out['rows'][] = $request->__toString();
     	
