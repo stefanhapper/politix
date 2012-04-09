@@ -5,13 +5,6 @@
 </IfModule>
 
 
-# Set up 2 Hour caching on commonly updated files
-<filesMatch "\.(xml|txt|html|js|css)$">
-	ExpiresDefault A7200
-	Header append Cache-Control "proxy-revalidate"
-</filesMatch>
-
-
 # ----------------------------------------------------------------------
 # Gzip compression
 # ----------------------------------------------------------------------
