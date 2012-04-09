@@ -9,11 +9,9 @@ class MainController extends Controller {
     
     public function getHomepageAction() {
 		
-		$lastModified = new \DateTime();
-		
 		$ApcLastModified = apc_fetch('homeLastModified');
-    	$lastModified->createFromFormat('U',$ApcLastModified);
-    	
+
+		$lastModified = new \DateTime('@' . $ApcLastModified);    	
     	
     	$response = new Response();
     
