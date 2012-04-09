@@ -31,7 +31,8 @@ class MainController extends Controller {
     	$output  = '<pre>' . $out['rows'][0] . '<br><hr><br>';
     	$output .= $out['rows'][1] . '<br><hr><br>';
     	$output .= $ApcLastModified . '<br><hr><br>';
-    	$output .= date('r',$ApcLastModified) . '</pre>';
+    	$output .= date('r',$ApcLastModified) . '<br><hr><br>';
+    	$output .= $lastModified->format('r') . '</pre>';
     	
     	$response->setContent($output);
     	
