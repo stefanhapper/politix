@@ -10,7 +10,9 @@ class MainController extends Controller {
     public function getHomepageAction() {
 		
 		$lastModified = new \DateTime();
-    	$lastModified->createFromFormat('U',apc_fetch('homeLastModified'));
+		
+		$ApcLastModified = apc_fetch('homeLastModified');
+    	$lastModified->createFromFormat('U',$ApcLastModified);
     	
     	
     	$response = new Response();
@@ -26,7 +28,10 @@ class MainController extends Controller {
     	$out['rows'][] = $response->__toString();
     	$out['rows'][] = $request->__toString();
     	
-    	$output = '<pre>' . $out['rows'][0] . '<br><hr><br>' . $out['rows'][1] . '</pre>';
+    	$output  = '<pre>' . $out['rows'][0] . '<br><hr><br>';
+    	$output .= $out['rows'][1] . '<br><hr><br>';
+    	$output .= $ApcLastModified . '<br><hr><br>';
+    	$output .= date('r',$ApcLastModified) . '</pre>';
     	
     	$response->setContent($output);
     	
