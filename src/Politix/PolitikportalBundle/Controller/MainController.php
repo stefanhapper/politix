@@ -31,6 +31,7 @@ class MainController extends Controller {
 		} else {
 		
 			$ApcLastModified = time();
+			apc_store('homeLastModified',time());
 			
 		}
 
