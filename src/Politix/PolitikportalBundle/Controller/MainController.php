@@ -17,7 +17,7 @@ class MainController extends Controller {
 		$this->response->setMaxAge(60);
 		$this->response->setSharedMaxAge(60);
 		
-		date_default_timezone_set("Europe/Brussels");
+		//date_default_timezone_set("Europe/Brussels");
 
 	}
     
@@ -34,8 +34,10 @@ class MainController extends Controller {
 			
 		}
 
-		//$timezone = new \DateTimeZone('Europe/Brussels');
+		$timezone = new \DateTimeZone('Europe/Brussels');
+		
 		$lastModified = new \DateTime('@' . $ApcLastModified);
+    	$lastModified->setTimezone($timezone);
     	
     	$this->response->setLastModified($lastModified);
     	
