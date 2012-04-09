@@ -28,7 +28,7 @@ class MainController extends Controller {
     	
     	$output = $out['rows'][0] . '<br><hr><br>' . $out['rows'][1];
     	
-    	$responde->setContent($output);
+    	$response->setContent($output);
     	
     	return $response;
     	
