@@ -11,7 +11,7 @@ class MainController extends Controller {
 		
 		$lastModified = new \DateTime();
     	$lastModified->createFromFormat('U',apc_fetch('homeLastModified'));
-
+    	
     	
     	$response = new Response();
     
@@ -23,21 +23,22 @@ class MainController extends Controller {
     	
     	$request = $this->getRequest();
     	
-    	$out['rows'][] = $response->__toString();
-    	$out['rows'][] = $request->__toString();
+    	// $out['rows'][] = $response->__toString();
+    	// $out['rows'][] = $request->__toString();
     	
-    	return $this->render('PolitikportalBundle:Default:dump.html.twig', $out);
+    	// return $this->render('PolitikportalBundle:Default:dump.html.twig', $out);
 
 
-    	// if ($response->isNotModified($this->getRequest())) return $response;
-    	
+    	if ($response->isNotModified($this->getRequest())) {
+    		return $response;
+    	} else {
     	
 
-    	// $out['heading'] = $lastModified->format('r');
+    	$out['heading'] = $lastModified->format('r');
 
-        // $TopicModel = $this->get('TopicModel');
+        $TopicModel = $this->get('TopicModel');
     	
-/*
+
     	$topics = $TopicModel->getHomepageTopics();
     	
     	$out['rows'][] = 'empty';
@@ -51,8 +52,9 @@ class MainController extends Controller {
     	$response->setContent($this->render('PolitikportalBundle:Default:topics.html.twig', $out));
 
     	return $response;    	
-*/
-        
+
+        }
+    	
     }
     
 	
