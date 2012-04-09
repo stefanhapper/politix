@@ -23,12 +23,19 @@ class MainController extends Controller {
     	
     	$request = $this->getRequest();
     	
-    	// $out['rows'][] = $response->__toString();
-    	// $out['rows'][] = $request->__toString();
+    	$out['rows'][] = $response->__toString();
+    	$out['rows'][] = $request->__toString();
     	
-    	// return $this->render('PolitikportalBundle:Default:dump.html.twig', $out);
+    	$output = $out['rows'][0] . '<br><hr><br>' . $out['rows'][1];
+    	
+    	$responde->setContent($output);
+    	
+    	return $response;
+    	
+    	/*return $this->render('PolitikportalBundle:Default:dump.html.twig', $out);
 
 
+		
     	if ($response->isNotModified($this->getRequest())) {
     		return $response;
     	} else {
@@ -53,7 +60,7 @@ class MainController extends Controller {
 
     	return $response;    	
 
-        }
+        } */
     	
     }
     
