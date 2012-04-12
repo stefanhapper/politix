@@ -49,7 +49,10 @@ class MainController extends Controller {
     	
     	$out['heading'] = $lastModified->format('r');
 
-        $TopicModel = $this->get('TopicModel');
+        
+        /*
+        
+         $TopicModel = $this->get('TopicModel');
     	
 
     	$topics = $TopicModel->getHomepageTopics();
@@ -60,6 +63,10 @@ class MainController extends Controller {
     	
     	$this->response->setContent($this->render('PolitikportalBundle:Default:topics.html.twig', $out));
 
+		*/
+
+    	$this->response->setContent('my content (' . $out['heading'] . ')');
+		
     	return $this->response;    
     	
     }        
