@@ -65,7 +65,9 @@ class MainController extends Controller {
 
 		*/
 		
-		echo $this->render('PolitikportalBundle:Default:topics.html.twig', $out);
+		$out['rows'][] = 'this is an output.';
+		
+		echo $this->render('PolitikportalBundle:Default:dump.html.twig', $out);
 
     	// $this->response->setContent('my content (' . $out['heading'] . ')');
 		
