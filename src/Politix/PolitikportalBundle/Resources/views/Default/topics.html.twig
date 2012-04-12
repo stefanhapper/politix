@@ -12,8 +12,6 @@
 
 {% block main %}
 
-	<h1>Version: {{ heading }}</h1>
-
 	{% for topic in topics %}
 	
     	<div class="items">
@@ -31,5 +29,12 @@
     	</div>
 
 	{% endfor %}
+	
+{% endblock %}
+
+
+{% block sidebar %}
+
+	Version: {{ heading }}
 	
 {% endblock %}
