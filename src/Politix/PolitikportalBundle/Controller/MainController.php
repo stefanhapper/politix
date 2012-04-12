@@ -50,8 +50,6 @@ class MainController extends Controller {
     	$out['heading'] = $lastModified->format('r');
 
         
-        /*
-        
          $TopicModel = $this->get('TopicModel');
     	
 
@@ -61,17 +59,9 @@ class MainController extends Controller {
     		$out['topics'][] = $TopicModel->getTopic($topic);
     	}
     	
-    	$this->response->setContent($this->render('PolitikportalBundle:Default:topics.html.twig', $out));
+    	$this->response->setContent($this->renderView('PolitikportalBundle:Default:topics.html.twig', $out));
 
-		*/
-		
-		$out['rows'][] = 'this is an output.';
-		
-		echo $this->render('PolitikportalBundle:Default:dump.html.twig', $out);
-
-    	// $this->response->setContent('my content (' . $out['heading'] . ')');
-		
-    	return 'nix.'; //$this->response;    
+    	return $this->response;    
     	
     }        
     
