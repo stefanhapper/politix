@@ -64,10 +64,12 @@ class MainController extends Controller {
     	$this->response->setContent($this->render('PolitikportalBundle:Default:topics.html.twig', $out));
 
 		*/
-
-    	$this->response->setContent('my content (' . $out['heading'] . ')');
 		
-    	return $this->response;    
+		echo $this->render('PolitikportalBundle:Default:topics.html.twig', $out;
+
+    	// $this->response->setContent('my content (' . $out['heading'] . ')');
+		
+    	return 'nix.'; //$this->response;    
     	
     }        
     
