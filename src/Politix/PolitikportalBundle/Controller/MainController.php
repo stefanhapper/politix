@@ -17,8 +17,6 @@ class MainController extends Controller {
 		$this->response->setMaxAge(60);
 		$this->response->setSharedMaxAge(60);
 		
-		//date_default_timezone_set("Europe/Brussels");
-
 	}
     
     
