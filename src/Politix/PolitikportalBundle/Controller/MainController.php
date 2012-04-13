@@ -14,22 +14,25 @@ class MainController extends Controller {
 		$this->response = new Response();
 	
 	    $this->response->setPublic();
-		$this->response->setMaxAge(60);
-		$this->response->setSharedMaxAge(60);
+		// $this->response->setMaxAge(60);
+		// $this->response->setSharedMaxAge(60);
+		
+		$this->apc = function_exists('apc_fetch');
 		
 	}
     
     
     public function getHomepageAction() {
 		
-		if (apc_fetch('homeLastModified')) {
+		if (($this->apc) && (apc_fetch('homeLastModified'))) {
 		
 			$ApcLastModified = apc_fetch('homeLastModified');
 			
 		} else {
 		
 			$ApcLastModified = time();
-			apc_store('homeLastModified',time());
+			
+			if ($this->apc) apc_store('homeLastModified',time());
 			
 		}
 
