@@ -59,7 +59,8 @@ class MainController extends Controller {
     	$topics = $TopicModel->getHomepageTopics();
     	
     	foreach ($topics as $topic) {
-    		$out['topics'][] = $TopicModel->getTopic($topic);
+    		$out['topics']['topic'.$topic['id']]['items'] = $TopicModel->getTopic($topic);
+    		$out['topics']['topic'.$topic['id']]['title'] = $topic['title_at'];
     	}
     	
     	$this->response->setContent($this->renderView('PolitikportalBundle:Default:topics.html.twig', $out));

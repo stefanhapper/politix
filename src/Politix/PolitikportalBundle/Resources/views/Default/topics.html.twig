@@ -16,7 +16,7 @@
 	
     	<div class="items">
 
-    	{% for item in topic %}
+    	{% for item in topic.items %}
         
         	{% include "PolitikportalBundle:Default:item.html.twig" with { 'item' : item } only %}
 			    
@@ -25,8 +25,11 @@
         	<div class="alert">No topics</div>
 
     	{% endfor %}
-    
+
+		<a href="#" class="btn btn-mini btn-info btn-topic">{{ topic.title }}</a>
+
     	</div>
+
 
 	{% endfor %}
 	
