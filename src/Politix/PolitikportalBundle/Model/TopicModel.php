@@ -11,7 +11,8 @@ class TopicModel {
     private $days = 1.5;
     private $start_ts = 0;
 	private $end_ts = 0;
-    
+    private $ids = array();
+
     
     function __construct(Connection $conn) {
     	
@@ -126,15 +127,13 @@ class TopicModel {
     }
     
     public function removeDouble($topic) {
-    
-    	$items = array();
-    	
+        	
     	$cleanTopic = array();
     	
     	foreach ($topic as $item) {
     	
-    		if (!in_array($item['rssId'],$items)) {
-    			$items[] = $item['rssId'];
+    		if (!in_array($item['rssId'],$this->ids)) {
+    			$this->ids[] = $item['rssId'];
     			$cleanTopic[] = $item;
     		}
     	}
