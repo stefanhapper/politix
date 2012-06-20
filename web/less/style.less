@@ -58,7 +58,13 @@ body {
 }
 
 #welcome .pad {
-	padding: 30px;
+	padding: 25px 30px;
+}
+
+#welcome p.info {
+    font-size: 15px;
+    margin: 15px 0;
+    padding: 0;
 }
 
 footer {
@@ -81,7 +87,7 @@ footer {
 }
 
 .items {
-	padding: 15px 30px;
+	padding: 5px 0;
 	border-right: 1px solid #E0DFEE;
 	background-color: #fff;
     box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25);
@@ -89,8 +95,12 @@ footer {
 }
 
 .item {
-	padding: 10px 0;
+	padding: 10px 30px;
 	border-bottom: 1px dotted #E0DFEE;
+}
+
+.item:last-child {
+	border-bottom: none;
 }
 
 .item a.newstitle strong { font-family: Trebuchet MS, Sans-Serif; }
