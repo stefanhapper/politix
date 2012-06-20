@@ -88,9 +88,26 @@
         
            		<h1>Der Nachrichtenservice für EU-Profis</h1>
            	
-           		<p>Abonnieren Sie jetzt kostenlos unseren Newsletter und erhalten Sie täglich die wichtigsten Nachrichten aus mehr als 300 Quellen in ihrer Mailbox</p>
+           		<p class="info">Abonnieren Sie jetzt <strong>kostenlos</strong> unseren Newsletter und erhalten Sie täglich<br />die wichtigsten Nachrichten aus mehr als 300 Quellen in ihrer Mailbox</p>
+           							
+				<table cellpadding="0" cellspacing="0">
+					<tr>
+						<td style="padding-top: 2px;">
+							<form style="margin: 0; padding: 0;" action="/newsletter/subscribe" method="post">
+								<input type="hidden" name="action" value="subscribe" />
+								<input style="line-height: 16px; border: 1px solid #999; background-color: #FFF; color: #444;" class="textbox" onfocus="this.value=''" type="text" name="email" value="Ihre Emailadresse ..." size="30" />&nbsp;&nbsp;<input style="" class='btn btn-success' type="submit" value="Kostenlos abonnieren" />
+							</form>
+						</td>
+					
+						<td style="padding-left: 25px;">
+							<p style="clear: both; font-size: 9px; margin: -13px 0 -7px 0; padding: 0; line-height: 12px;">Keine Weitergabe Ihrer Email-Adresse!<br />Abmeldung jederzeit m&ouml;glich.</p>
+						</td>
+					</tr>
+				</table>
+			
+           		<br />
            		
-           		<p><a onClick="hide_welcome()" class="btn">Nicht mehr anzeigen</a></p>
+           		<a onClick="hide_welcome()" class="close" style="font-size: 12px; float: none;">&times; Nicht mehr anzeigen</a>
            		        
         	</div>
         	
