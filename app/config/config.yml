@@ -71,3 +71,16 @@ services:
     TopicModel:
         class:       Politix\PolitikportalBundle\Model\TopicModel
         arguments:   [ @doctrine.dbal.politix_connection ]
+        
+    UserModel:
+        class:       Politix\PolitikportalBundle\Model\UserModel
+        arguments:   [ @doctrine.dbal.politix_connection ]
+
+    LogModel:
+        class:       Politix\PolitikportalBundle\Model\LogModel
+        arguments:   [ @doctrine.dbal.politix_connection ]
+    
+    twig.extension.escaper:
+        class:       Twig_Extension_Escaper
+        annotation:  { name: twig.extension }
+

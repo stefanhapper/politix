@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+
+
+{% block main %}
+	
+    	<div class="items">
+    	
+			<div class="item {{ type }}">
+			
+				<h2>{{ title }}</h2><br />
+				
+				{{ page | raw }}
+				
+			</div>
+
+    	</div>
+	
+{% endblock %}
+
+
+{% block sidebar %}
+	Version: -
+{% endblock %}
+
+
+{% block title %}{{ title }} - politikportal.eu{% endblock %}

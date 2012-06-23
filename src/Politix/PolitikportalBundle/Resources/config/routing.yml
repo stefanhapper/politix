@@ -10,6 +10,10 @@ sources:
     pattern:  /sources/{page}
     defaults: { _controller: PolitikportalBundle:Source:getSources, page: 1 }
     
+subscribe:
+    pattern:  /subscribe
+    defaults: { _controller: PolitikportalBundle:User:subscribeUser}
+    
 topics:
     pattern:  /topics
     defaults: { _controller: PolitikportalBundle:Topic:getTopics }
