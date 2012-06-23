@@ -53,10 +53,12 @@ class MainController extends Controller {
     	$out['heading'] = $lastModified->format('r');
 
         
-         $TopicModel = $this->get('TopicModel');
+        $TopicModel = $this->get('TopicModel');
     	
 
     	$topics = $TopicModel->getHomepageTopics();
+    	
+    	$out['topics'] = array();
     	
     	foreach ($topics as $topic) {
     		if ($items = $TopicModel->getTopic($topic)) {
