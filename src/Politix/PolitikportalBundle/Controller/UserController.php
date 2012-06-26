@@ -46,7 +46,7 @@ class UserController extends Controller {
 	    $out['type'] = 'warning';
 			$out['title'] = "Fehler: Emailadresse bereits angemeldet!";
 			$out['page']  = "Die Emailadresse <strong>$email</strong> existiert bereits in unserer Verteilerliste!<br /><br />";
-			$out['page'] .= "Für eine etwaige Abbestellung des Newsletters oder sonstigen Fragen zum Newsletter schreiben Sie uns bitte eine Email an <a href='mailto:info@politikportal.eu'>info@politikportal.eu</a>" . $back_link;
+			$out['page'] .= "Für eine etwaige Abbestellung des Newsletters oder sonstige Fragen zum Newsletter schreiben Sie uns bitte eine Email an <a href='mailto:info@politikportal.eu'>info@politikportal.eu</a>" . $back_link;
 			$log->write("[Newsletter] tried to subscribe existing email: $email",1);
 			return $this->render('PolitikportalBundle:Default:page.html.twig', $out);
 		}
