@@ -25,6 +25,9 @@
     
 </head>
 
+<!--  BODY 
+=========================================================================== -->
+
 <body>
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
@@ -51,6 +54,9 @@
     </div>
 	</div>
 
+	<!-- PAGE
+	========================================================================= -->
+	
 	<div id="container" class="container">
 
 		<!-- Main hero unit for a primary marketing message or call to action -->
@@ -108,73 +114,83 @@
 				</div>
 			</div>
 			
-	</div>
-      <!-- Example row of columns -->
+		</div>
+    
+    <!--  MAIN 
+    ======================================================================= -->
 
-      <div class="row">
+    <div class="row">
 
-        <div id="main" class="span8">
+			<div id="main" class="span8">
+        <div class="pad">
+			   	{% block main %}{% endblock %}
+				</div>
+      </div>
+
+      <div id="right" class="span4">
         
-          <div class="pad">
+				{% include 'PolitikportalBundle:Default:partneritem.html.twig' with partners %}
+				
+				<div class="box">
+					
+					<script type="text/javascript"><!--
+						google_ad_client = "ca-pub-6709520427755264";
+						/* Wide Link Unit */
+						google_ad_slot = "2070730543";
+						google_ad_width = 468;
+						google_ad_height = 15;
+						//-->
+					</script>
+					
+					<script type="text/javascript"
+						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+					</script>
 
-           	{% block main %}{% endblock %}
+          {% block sidebar %}{% endblock %}
 
-		  </div>
-        
-        </div>
-
-        <div id="right" class="span4">
-        
-        	<div class="pad">
-
-           		{% block sidebar %}{% endblock %}
-
-			</div>
+				</div>
 			
-       </div>
+      </div>
 
-
+			<!-- FOOTER
+			--------------------------------------------------------------------- -->
+			
       <footer>
-
         <p>&copy; Konzeption und Entwicklung 2006-2009 by <a href="http://www.stefanhapper.com">Stefan Happer</a></p>
-
       </footer>
 
+    </div>
 
-
-    </div> <!-- /container -->
-
-
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 	
-	<!-- scripts concatenated and minified via ant build script-->
-
-	<script src="/js/libs/bootstrap/transition.js"></script>
-	<script src="/js/libs/bootstrap/collapse.js"></script>
-	<script src="/js/libs/bootstrap/dropdown.js"></script>
-	<script src="/js/plugins.js"></script>
-	<script src="/js/script.js"></script>
-
-	{% block javascripts %}{% endblock %}
-
-	<!-- end scripts-->
-
-	<script>
-
-		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-		s.parentNode.insertBefore(g,s)}(document,'script'));
-
-	</script>
+		
+		<!-- scripts concatenated and minified via ant build script-->
 	
-	<!-- start Mixpanel --><script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config".split(" ");
-	for(e=0;e<g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
-	//mixpanel.init("41bf4116913b2984626f2618e795aaaf");
-	//mixpanel.track('it worked');
-	</script><!-- end Mixpanel -->
+		<script src="/js/libs/bootstrap/transition.js"></script>
+		<script src="/js/libs/bootstrap/collapse.js"></script>
+		<script src="/js/libs/bootstrap/dropdown.js"></script>
+		<script src="/js/plugins.js"></script>
+		<script src="/js/script.js"></script>
+	
+		{% block javascripts %}{% endblock %}
+	
+		<!-- end scripts-->
+	
+		<script>
+	
+			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)}(document,'script'));
+	
+		</script>
+		
+		<!-- start Mixpanel --><script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config".split(" ");
+		for(e=0;e<g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
+		//mixpanel.init("41bf4116913b2984626f2618e795aaaf");
+		//mixpanel.track('it worked');
+		</script><!-- end Mixpanel -->
 
 </body>
 </html>

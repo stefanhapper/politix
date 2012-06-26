@@ -42,10 +42,10 @@ body {
     x--webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
-#right,
-#welcome {
+#welcome,
+.box {
 	background-color: #fff;
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 #welcome {
@@ -68,8 +68,15 @@ body {
     padding: 0;
 }
 
+.hpad {
+	padding-left: 10px;
+	padding-right: 10px;
+}
 
-
+.vpad {
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
 
 footer {
 	clear: both;
@@ -81,9 +88,6 @@ footer {
 }
 
 
-#right .pad {
-	padding: 20px; 
-}
 
 .p-pager {
 	margin: 20px 0;
@@ -97,9 +101,13 @@ footer {
 	margin: 0 0 20px 0;
 }
 
+.border-line {
+	border-bottom: 1px dotted #E0DFEE;
+}
+
 .item {
 	padding: 10px 30px;
-	border-bottom: 1px dotted #E0DFEE;
+	.border-line;
 }
 
 .item:last-child {
@@ -155,6 +163,39 @@ a:hover {
 
 .warning {
 	background-color: #FCF8E3;
+}
+
+.box {
+	margin-bottom: 20px;
+}
+
+.box .title {
+	.hpad;
+	background-color: #ddf;
+	font-size: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.box .content {
+	.vpad;
+	.hpad;
+	.border-line;
+	font-size: 11px;
+	line-height: 14px;
+}
+
+#right .content .description {
+	margin-top: 4px;
+}
+
+.box .content:last-child {
+	border-bottom: none;
+}
+
+.partner .logo {
+	float: right;
+	margin: 0 0 5px 10px;
 }
 
 /* ----- quotes --------------------------------------------------------------------------------- */
