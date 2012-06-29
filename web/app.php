@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 $kernel = new AppKernel('prod', false);
 $kernel->loadClassCache();
 
-/* cache turned on */
+/* yes, cache turned on */
 $kernel = new AppCache($kernel);
 
 $kernel->handle(Request::createFromGlobals())->send();
