@@ -17,7 +17,6 @@ class MainController extends Controller {
 		$this->apc = function_exists('apc_fetch');
 		
 		//$response = $this->getResponse();
-		$response->setHttpHeader('X-UA-Compatible', 'IE=edge,chrome=1');
 
 	}
     
@@ -52,6 +51,7 @@ class MainController extends Controller {
     
     $sources = $this->get('SourceModel');
     $out['partners'][] = $sources->getSource('wkoe',0,1);
+    $response->setHttpHeader('X-UA-Compatible', 'IE=edge,chrome=1');
     $this->response->setContent($this->renderView('PolitikportalBundle:Default:topics.html.twig', $out));
     return $this->response;    
   }        
