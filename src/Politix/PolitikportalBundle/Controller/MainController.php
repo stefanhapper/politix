@@ -14,7 +14,11 @@ class MainController extends Controller {
 	  $this->response->setPublic();
  // $this->response->setMaxAge(60);
  // $this->response->setSharedMaxAge(60);
-		$this->apc = function_exists('apc_fetch');	
+		$this->apc = function_exists('apc_fetch');
+		
+		$response = $this->getResponse();
+		$response->setHttpHeader('X-UA-Compatible', 'IE=edge,chrome=1');
+
 	}
     
   public function getHomepageAction() {
