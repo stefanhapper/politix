@@ -16,7 +16,7 @@ class MainController extends Controller {
  // $this->response->setSharedMaxAge(60);
 		$this->apc = function_exists('apc_fetch');
 		
-		//$response = $this->getResponse();
+    $this->response->headers->set('X-UA-Compatible', 'IE=edge,chrome=1');
 
 	}
     
@@ -51,7 +51,6 @@ class MainController extends Controller {
     
     $sources = $this->get('SourceModel');
     $out['partners'][] = $sources->getSource('wkoe',0,1);
-    $this->response->headers->set('X-UA-Compatible', 'IE=edge,chrome=1');
     $this->response->setContent($this->renderView('PolitikportalBundle:Default:topics.html.twig', $out));
     return $this->response;    
   }        
