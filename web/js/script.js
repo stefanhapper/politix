@@ -90,7 +90,7 @@ $(document).ready(function () {
 function hide_welcome() {
 	$('#welcome,.features-wrapper').slideUp();
   mixpanel.track("Hide welcome message");
-  $.cookie('hidewelcome','1',{ expires: 365, path: '/', domain: 'politikportal.eu',  });
+  $.cookie('hidewelcome','1',{ expires: 365, path: '/', domain: 'politikportal.eu' });
 }
 
 
