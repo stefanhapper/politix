@@ -49,15 +49,13 @@ $(window).resize(function() {
 $(document).ready(function () {
 	
 	if ($.cookie('hidewelcome') === null) {
-		
 		$('.features').jshowoff({ controls: false, links: false, speed: 6000 });
-
 		var welcomeheight = $('#welcome').height();
 		welcomeheight -= 50;
 		$('.features-wrapper').css({'min-height': welcomeheight});
-	
 		$('#welcome,.features-wrapper').show();
-		
+	} else {
+		$('#intro').show();
 	}
 	
 	$('.clear-on-focus').each(function() {
