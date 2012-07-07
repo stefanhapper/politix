@@ -86,8 +86,8 @@ $(document).ready(function () {
 
 
 function hide_welcome() {
-	$('#welcome,.features-wrapper').slideUp(function() {
-		$('#intro').slideDown();	
+	$('#welcome,.features-wrapper').fadeOut(1000,function() {
+		$('#intro').show();	
 	});
   //mixpanel.track("Hide welcome message");
   $.cookie('hidewelcome','1',{ expires: 365, path: '/', domain: 'politikportal.eu' });
