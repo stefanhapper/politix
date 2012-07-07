@@ -1,7 +1,7 @@
 @import "bootstrap/bootstrap.less";
 
 body {
-  background-color: #F6F6FC;
+  background-color: #f3f6fa;
   padding-top: 60px;
   padding-bottom: 40px;
 }
@@ -14,7 +14,7 @@ body {
    ========================================================================== */
 
 .navbar-inner {
-	background-color: #F6F6FC;
+	background-color: #f3f6fa;
 	background-image: none;
 	box-shadow: none;
 }
@@ -152,10 +152,10 @@ a:hover {
 
 .box .title {
 	.hpad;
-	background-color: #ddf;
 	font-size: 10px;
 	padding-top: 2px;
 	padding-bottom: 2px;
+	.gradient;
 }
 
 .box .content {
@@ -207,6 +207,14 @@ a:hover {
 	margin-left: -1px;
 }
 
+.close {
+	opacity: 0.4;
+}
+
+.close:hover {
+	opacity: 0.6;
+}
+
 /* ----- styling -------------------------------------------------------------------------------- */
 
 .shadow {
@@ -216,9 +224,9 @@ a:hover {
 }
 
 .gradient {
-	background: -moz-linear-gradient(center top , #DEF, #CDF);
-	background: -webkit-linear-gradient(top, #F3F3F9, #ECEBF4);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F3F3F9), color-stop(100%, #ECEBF4));
+	background: -moz-linear-gradient(center top , #f3f6fa, #dbe6f2);
+	background: -webkit-linear-gradient(top, #f3f6fa, #dbe6f2);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f6fa), color-stop(100%, #dbe6f2));
 }
 
 /* ----- quotes --------------------------------------------------------------------------------- */
@@ -226,13 +234,11 @@ a:hover {
 .features-wrapper {
 	background-color: #fff;
   padding-top: 50px;
-  background: -webkit-linear-gradient(top, #F3F3F9, #ECEBF4);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F3F3F9), color-stop(100%, #ECEBF4));
 	margin-top: 20px;
-  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25);
-	background: -moz-linear-gradient(center top , #DEF, #CDF);
 	text-align: center;
 	display: none;
+	.shadow;
+	.gradient;
 }
 
 .features {
