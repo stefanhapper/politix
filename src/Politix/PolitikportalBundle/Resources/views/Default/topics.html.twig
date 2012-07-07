@@ -15,6 +15,9 @@
 	{% for topic in topics %}
 	
     	<div class="items">
+        <div class="title">
+          <a href="#">{{ topic.title }}</a>
+        </div>
 
     	{% for item in topic.items %}
         
@@ -26,7 +29,6 @@
 
     	{% endfor %}
 
-		<a href="#" class="btn btn-mini btn-info btn-topic">{{ topic.title }}</a>
 
     	</div>
 
