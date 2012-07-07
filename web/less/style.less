@@ -21,11 +21,8 @@ body {
 
 .navbar-inner .container {  
 	background-color: #fff;  
-  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25);
-    
-    x-background-image: -moz-linear-gradient(center top , #FCFCFC, #F9F9F9);
-    
- }
+	.shadow;
+}
  
 #logo {
  	width: 300px;
@@ -37,24 +34,17 @@ body {
 #right,
 #welcome {
 	margin-top: 20px;
-    x-box-shadow: 0px 0px 6px #000;
-    x--moz-box-shadow: 0px 0px 6px #000;
-    x--webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 #welcome,
 .box {
 	background-color: #fff;
-  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25);
+	.shadow;
 }
 
 #welcome {
 	display: none;
-	background: -moz-linear-gradient(center top , #DEF, #CDF);
-	background: -webkit-linear-gradient(top, #F3F3F9, #ECEBF4);
-	
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F3F3F9), color-stop(100%, #ECEBF4));
-
+	.gradient;
 }
 
 
@@ -68,15 +58,6 @@ body {
     padding: 0;
 }
 
-.hpad {
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-.vpad {
-	padding-top: 7px;
-	padding-bottom: 7px;
-}
 
 footer {
 	clear: both;
@@ -97,8 +78,8 @@ footer {
 .items {
 	padding: 5px 0;
 	background-color: #fff;
-  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25);
 	margin: 0 0 20px 0;
+	.shadow;
 }
 
 .border-line {
@@ -196,6 +177,48 @@ a:hover {
 .partner .logo {
 	float: right;
 	margin: 2px 0 5px 10px;
+}
+
+#intro {
+	display: none;
+}
+
+/* ----- sizing --------------------------------------------------------------------------------- */
+
+.pad {
+	.hpad;
+	.vpad;
+}
+
+.hpad {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.vpad {
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+/* ----- fine tuning ---------------------------------------------------------------------------- */
+
+#intro .textbox,
+#welcome .textbox {
+	margin-left: -1px;
+}
+
+/* ----- styling -------------------------------------------------------------------------------- */
+
+.shadow {
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 4px #000;
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.gradient {
+	background: -moz-linear-gradient(center top , #DEF, #CDF);
+	background: -webkit-linear-gradient(top, #F3F3F9, #ECEBF4);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F3F3F9), color-stop(100%, #ECEBF4));
 }
 
 /* ----- quotes --------------------------------------------------------------------------------- */
