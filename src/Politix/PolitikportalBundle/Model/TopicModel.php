@@ -96,8 +96,11 @@ class TopicModel {
 				    LEFT JOIN topic_links ON (topic_links.fid_rss_items = rss_items.id)
 				    LEFT JOIN topics ON (topic_links.fid_topics = topics.id)";
 	  
-	  if ($options['parent']) $sql .= "WHERE	(topic_links.fid_topics = " . $topic['id'] . " OR topics.parent_id = " . $topic['id'] . ")";
-	  else $sql .= "WHERE	topic_links.fid_topics = " . $topic['id'];
+	  if (isset($options['parent'])) {
+	    $sql .= "WHERE	(topic_links.fid_topics = " . $topic['id'] . " OR topics.parent_id = " . $topic['id'] . ")";
+	  } else {
+	    $sql .= "WHERE	topic_links.fid_topics = " . $topic['id'];
+	  }
 	  
 	  $sql .= " AND rss_items.rank <> 2
 	            AND rss_items.rank < 4
@@ -106,14 +109,17 @@ class TopicModel {
 
 				      GROUP BY rss_items.id ";
 				      
-		if ($options['order'] == 'rank') $sql .= "ORDER BY rss_items.rank ASC, pubDate DESC ";
-		else $sql .= "ORDER BY pubDate DESC ";
+		if ((isset($options['order'])) and ($options['order'] == 'date')) {
+		  $sql .= "ORDER BY pubDate DESC ";
+		} else {
+		  $sql .= "ORDER BY rss_items.rank ASC, pubDate DESC ";
+		}
 		
 		if (!isset($options['start'])) $start = 0;
 		if (!isset($options['limit'])) $limit = 100;
 		
 		$sql .= "LIMIT $start, $limit";
-			
+					
 		return $this->removeDouble($this->conn->fetchAll($sql));
 		
   }
@@ -121,6 +127,7 @@ class TopicModel {
   public function getId($url) {
     $sql = "SELECT id FROM topics WHERE url LIKE '$url'";
     return $this->conn->fetchAssoc($sql);
+    //return $result['id'];
   }
     
   public function removeDouble($topic) {

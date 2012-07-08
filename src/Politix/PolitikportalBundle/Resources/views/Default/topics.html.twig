@@ -16,7 +16,7 @@
 	
     	<div class="items">
         <div class="title">
-          <a href="/europa/{{ topic.url }}">{{ topic.title }}</a>
+          <a href="{{ url('topic', { topic : topic.url }) }}">{{ topic.title }}</a>
         </div>
 
     	{% for item in topic.items %}

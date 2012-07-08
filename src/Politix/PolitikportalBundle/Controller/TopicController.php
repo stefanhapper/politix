@@ -15,8 +15,7 @@ class TopicController extends Controller {
     $topics = $this->get('TopicModel');
     $topics->setPeriod(365);
     $id = $topics->getId($topic);
-    echo $id;
-    
+            
     $options['order'] = 'date';
     $options['parent'] = false;
      

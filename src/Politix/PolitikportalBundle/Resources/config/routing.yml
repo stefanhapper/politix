@@ -22,7 +22,7 @@ topic:
     pattern:  /europa/{topic}
     defaults: { _controller: PolitikportalBundle:Topic:getTopic }
     
-main:
+home:
     pattern:  /
     defaults: { _controller: PolitikportalBundle:Main:getHomepage }
     
