@@ -1,9 +1,14 @@
 @import "bootstrap/bootstrap.less";
 
+*,p,textbox,input {
+	font-family: Trebuchet MS, Sans-Serif;
+}
+
 body {
   background-color: #f3f6fa;
   padding-top: 60px;
   padding-bottom: 40px;
+  font-family: Trebuchet MS, Sans-Serif;
 }
 
 @import "bootstrap/responsive.less";
@@ -61,7 +66,9 @@ body {
 
 footer {
 	clear: both;
-	padding: 25px 60px;
+	padding: 10px 30px;
+	.shadow;
+	.gradient;
 }
 
 .hero-unit {
@@ -234,6 +241,7 @@ a:hover {
 	background: -moz-linear-gradient(center top , #f3f6fa, #dbe6f2);
 	background: -webkit-linear-gradient(top, #f3f6fa, #dbe6f2);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f6fa), color-stop(100%, #dbe6f2));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3f6fa', endColorstr='#dbe6f2');
 }
 
 /* ----- quotes --------------------------------------------------------------------------------- */
