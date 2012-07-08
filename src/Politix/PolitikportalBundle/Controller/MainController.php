@@ -46,6 +46,7 @@ class MainController extends Controller {
     	if ($items = $TopicModel->getTopic($topic)) {
     	  $out['topics']['topic'.$topic['id']]['items'] = $items;
     		$out['topics']['topic'.$topic['id']]['title'] = $topic['title_at'];
+    		$out['topics']['topic'.$topic['id']]['url'] = $topic['topicUrl'];
     	}
     }
     
