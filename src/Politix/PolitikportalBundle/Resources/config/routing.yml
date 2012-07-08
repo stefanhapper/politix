@@ -17,6 +17,10 @@ subscribe:
 topics:
     pattern:  /topics
     defaults: { _controller: PolitikportalBundle:Topic:getTopics }
+
+topic:
+    pattern:  /europa/{topic}
+    defaults: { _controller: PolitikportalBundle:Topic:getTopic }
     
 main:
     pattern:  /

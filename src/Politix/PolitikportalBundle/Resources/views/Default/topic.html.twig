@@ -1,0 +1,39 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+     Welcome!
+{% endblock %}
+ 
+
+{% block description %}
+	This is the new Politikportal homepage.
+{% endblock %}
+
+
+{% block main %}
+
+  <div class="items">
+    <div class="title">
+      <h2>{{ topic.title }}</h2>
+    </div>
+
+    {% for item in topic.items %}
+        
+      {% include "PolitikportalBundle:Default:item.html.twig" with { 'item' : item } only %}
+			    
+    {% else %}
+
+      <div class="alert">No topics</div>
+
+    {% endfor %}
+
+  </div>
+	
+{% endblock %}
+
+
+{% block sidebar %}
+
+	Version: {{ heading }}
+	
+{% endblock %}
