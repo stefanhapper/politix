@@ -46,19 +46,18 @@ body {
 	.shadow;
 }
 
+html.lt-ie9 .box {
+	.ieborder;
+}
+
 #welcome {
 	display: none;
 	.shadow;
-}
-
-#welcome .pad {
-	background-color: #fff;
-	position: relative;
 	.gradient;
 }
 
 html.lt-ie9 #welcome {
-	.ieshadow;
+	.ieborder;
 }
 
 
@@ -114,7 +113,7 @@ footer .credits p {
 }
 
 html.lt-ie9 .items {
-	.ieshadow;
+	.ieborder;
 }
 
 .border-line {
@@ -124,8 +123,6 @@ html.lt-ie9 .items {
 .item {
 	padding: 10px 30px;
 	.border-line;
-	background-color: #fff;
-	position: relative;
 }
 
 .item:last-child {
@@ -276,10 +273,8 @@ a:hover {
 }
 
 
-.ieshadow {
-	zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
-	-ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+.ieborder {
+	border: 1px solid #85aad2;
 }
 
 /* ----- quotes --------------------------------------------------------------------------------- */
