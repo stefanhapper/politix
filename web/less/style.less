@@ -52,6 +52,10 @@ body {
 	.gradient;
 }
 
+html.lt-ie9 #welcome {
+	.ieshadow;
+}
+
 
 #welcome .pad {
 	padding: 25px 30px;
@@ -258,6 +262,15 @@ a:hover {
 	background: -webkit-linear-gradient(top, #f3f6fa, #dbe6f2);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f6fa), color-stop(100%, #dbe6f2));
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3f6fa', endColorstr='#dbe6f2');
+}
+
+
+.ieshadow {
+	zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0),
+         	progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90),
+         	progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180),
+         	progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270);
 }
 
 /* ----- quotes --------------------------------------------------------------------------------- */
