@@ -49,14 +49,12 @@ $(window).resize(function() {
 $(document).ready(function () {
 	
 	if ($.cookie('hidewelcome') === null) {
-		alert('we have no cookie');
 		$('.features').jshowoff({ controls: false, links: false, speed: 6000 });
 		var welcomeheight = $('#welcome').height();
 		welcomeheight -= 50;
 		$('.features-wrapper').css({'min-height': welcomeheight});
 		$('#welcome,.features-wrapper').show();
 	} else {
-		alert('we have a cookie!');
 		$('#intro').show();
 	}
 	
