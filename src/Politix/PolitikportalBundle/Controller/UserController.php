@@ -20,7 +20,7 @@ class UserController extends Controller {
     if (($email == '') or ($email == "Ihre Emailadresse ...")) {
 	  	$out['type'] = 'warning';
 			$out['title'] = "Achtung, Sie haben keine Emailadresse eingegeben!";
-			$out['page'] = "Bitte tragen Sie im Feld oben Ihre Emailadresse ein.";
+			$out['page'] = "Bitte versuchen Sie es erneut.";
 			$log->write("[Newsletter] no email entered",1);
 			return $this->render('PolitikportalBundle:Default:page.html.twig', $out);
     }
