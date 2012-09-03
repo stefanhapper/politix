@@ -14,6 +14,10 @@ subscribe:
     pattern:  /subscribe
     defaults: { _controller: PolitikportalBundle:User:subscribeUser}
     
+impressum:
+    pattern:  /impressum
+    defaults: { _controller: PolitikportalBundle:Main:getImpressum }
+    
 topics:
     pattern:  /topics
     defaults: { _controller: PolitikportalBundle:Topic:getTopics }

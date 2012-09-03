@@ -55,5 +55,11 @@ class MainController extends Controller {
     $this->response->setContent($this->renderView('PolitikportalBundle:Default:topics.html.twig', $out));
     return $this->response;    
   }        
+
+
+  public function getImpressumAction() {
+    $this->response->setContent($this->renderView('PolitikportalBundle:Default:about.html.twig'));
+    return $this->response;    
+  }        
     
 }
