@@ -29,7 +29,7 @@ class LogModel {
   
   public function message($log, $type = 0) {
   	$url = 'http://www.brusselsmedia.eu/msg/' . urlencode(json_encode($log));
-  	file_get_contents($url);
+  	@file_get_contents($url);
   }
 
   public function tableExists($table) {
