@@ -141,7 +141,11 @@
 						</p>
 				</div>
 
-				{% include 'PolitikportalBundle:Default:partneritem.html.twig' with partners %}
+				<!--  PARTNERS
+			  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+			  {% if partners is defined %}
+					{% include 'PolitikportalBundle:Default:partneritem.html.twig' with partners %}
+				{% endif %}
 				
 				<div class="box ad">
 					<div class="content">
