@@ -62,9 +62,5 @@ class MainController extends Controller {
     $this->response->setContent($this->renderView('PolitikportalBundle:Default:about.html.twig'));
     return $this->response;    
   }
-  
-  public function getNewsAction() {
-    return new RedirectResponse('http://www.google.com');
-  }
     
 }
