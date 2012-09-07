@@ -26,6 +26,10 @@ topic:
     pattern:  /europa/{topic}
     defaults: { _controller: PolitikportalBundle:Topic:getTopic }
     
+news:
+    pattern:  /news/{id}
+    defaults: { _controller:PolitikportalBundle:Main:getNews }
+    
 home:
     pattern:  /
     defaults: { _controller: PolitikportalBundle:Main:getHomepage }

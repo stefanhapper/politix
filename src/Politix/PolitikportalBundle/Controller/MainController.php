@@ -4,6 +4,7 @@ namespace Politix\PolitikportalBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class MainController extends Controller {
 	
@@ -60,6 +61,10 @@ class MainController extends Controller {
   public function getImpressumAction() {
     $this->response->setContent($this->renderView('PolitikportalBundle:Default:about.html.twig'));
     return $this->response;    
-  }        
+  }
+  
+  public function getNewsAction() {
+    return new RedirectResponse('http://www.google.com');
+  }
     
 }
