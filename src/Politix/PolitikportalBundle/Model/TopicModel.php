@@ -79,7 +79,7 @@ class TopicModel {
   public function getTopic($topic, $options = array()) {			
 				
 		$sql = "SELECT	UNIX_TIMESTAMP(pubDate) AS tspubDate,
-						rss_items.id AS rssId,
+						rss_items.id AS newsID,
 						rss_items.lang,
 						rss_items.link,
 						rss_items.title AS rssTitle,
