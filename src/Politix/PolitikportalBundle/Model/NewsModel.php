@@ -12,9 +12,14 @@ class NewsModel {
   }
   
   public function getLink($id) {
+    if (!is_numeric($id)) return FALSE;
     $sql = "SELECT link FROM rss_items WHERE id = " . $id;
     $result = $this->conn->fetchAssoc($sql);
-    return $result['link'];
+    if ($result) {
+      return $result['link'];
+    } else {
+      return FALSE;
+    }
   }
 
 }
