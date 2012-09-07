@@ -27,7 +27,7 @@ topic:
     defaults: { _controller: PolitikportalBundle:Topic:getTopic }
     
 news:
-    pattern:  /news/{id}
+    pattern:  /news/{id}/
     defaults: { _controller:PolitikportalBundle:News:getLink }
     
 home:
