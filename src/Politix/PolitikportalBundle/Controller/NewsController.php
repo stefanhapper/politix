@@ -16,11 +16,21 @@ class NewsController extends Controller {
   var $request;
   var $cookie;
   var $model;
+  var $p;
   
   function __construct() {
     $this->request = Request::createFromGlobals();
+    $this->checkCookies();
+  }
+
+  public function checkCookies() {
     if ($this->request->cookies->get('i')) {
       $this->subscriber = $this->request->cookies->get('i');
+    }
+    if ($this->request->cookies->get('p')) {
+      $this->p = $this->request->cookies->get('p');
+    } else {
+      $this->p = uniqid(rand(),TRUE);
     }
   }
   
@@ -48,7 +58,7 @@ class NewsController extends Controller {
       $this->cookie = new Cookie('i',$this->subscriber,time()+60*60*24*999,'/','.politikportal.eu');
     }
   }
-  
+    
   public function getLink() {
     $this->url = $this->model->getLink($this->id);
   }
@@ -59,6 +69,8 @@ class NewsController extends Controller {
       $this->model->saveClick($this->id,$this->url,$this->subscriber,$p,0);
       $response = new RedirectResponse($this->url);
       if ($this->cookie) $response->headers->setCookie($this->cookie);
+      $pCookie = new Cookie('p',$this->p,time()+60*60*24*999,'/','.politikportal.eu');
+      $response->headers->setCookie($pCookie);
       $response->headers->set('cache-control','no-cache, no-store, must-revalidate');
     } else {
       throw $this->createNotFoundException('Der Artikel konnte nicht gefunden werden');
