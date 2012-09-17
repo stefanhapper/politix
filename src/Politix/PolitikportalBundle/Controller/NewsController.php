@@ -12,7 +12,7 @@ class NewsController extends Controller {
   var $id;
   var $url;
   var $querystring;
-  var $subscriber;
+  var $subscriber = FALSE;
   var $request;
   var $cookie;
   var $model;

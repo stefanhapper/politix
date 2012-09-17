@@ -23,6 +23,7 @@ class NewsModel {
   }
   
   public function saveClick($id, $url, $i, $p, $textversion) {
+    if (!$i) $i = 'NULL';
     if (isset($_SERVER["HTTP_REFERER"])) {
       $referer = "'" . $_SERVER["HTTP_REFERER"] . "'";
     } else {
