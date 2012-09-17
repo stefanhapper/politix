@@ -20,7 +20,7 @@ class NewsController extends Controller {
   function __construct() {
     $this->request = Request::createFromGlobals();
     if ($this->request->cookies->get('i')) {
-      $subscriber = $request->cookies->get('i');
+      $subscriber = $this->request->cookies->get('i');
     }
   }
   
