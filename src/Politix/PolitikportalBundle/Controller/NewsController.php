@@ -65,8 +65,7 @@ class NewsController extends Controller {
    
   public function createResponse() {
     if ($this->url) {
-      $p = 0;
-      $this->model->saveClick($this->id,$this->url,$this->subscriber,$p,0);
+      $this->model->saveClick($this->id,$this->url,$this->subscriber,$this->p,0);
       $response = new RedirectResponse($this->url);
       if ($this->cookie) $response->headers->setCookie($this->cookie);
       $pCookie = new Cookie('p',$this->p,time()+60*60*24*999,'/','.politikportal.eu');
