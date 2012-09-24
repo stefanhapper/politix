@@ -33,7 +33,7 @@ class NewsModel {
               (id,site,ip,user,url,useragent,go,ref,item_id,i,p,sessionid,textversion)
 		          VALUES (
 		            NULL," .
-		            "'politikportal'," .
+		            "'new-politikportal'," .
 		            "'" . $_SERVER["REMOTE_ADDR"] . "'," . 
 					      "NULL," . 
 					      "'" . $_SERVER["REQUEST_URI"] . "'," . 
