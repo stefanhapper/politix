@@ -9,3 +9,7 @@ services:
     NewsModel:
         class:       Politix\PolitikportalBundle\Model\NewsModel
         arguments:   [ @doctrine.dbal.politix_connection ]
+
+    SearchModel:
+        class:       Politix\PolitikportalBundle\Model\SearchModel
+        arguments:   [ @doctrine.dbal.politix_connection ]

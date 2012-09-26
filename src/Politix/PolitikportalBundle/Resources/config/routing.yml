@@ -29,6 +29,10 @@ topic:
 news:
     pattern:  /news/{querystring}/
     defaults: { _controller:PolitikportalBundle:News:gotoNews }
+
+search:
+    pattern:  /search
+    defaults: { _controller:PolitikportalBundle:Search:query }
         
 home:
     pattern:  /

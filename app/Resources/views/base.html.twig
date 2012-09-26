@@ -40,6 +40,11 @@
         <!-- <a class="brand" href="#">Politikportal</a> -->
           
         <a href="{{ url('home') }}"><img id="logo" src="/img/politikportal-logo.png" alt="Politikportal" /></a>
+        
+        <form action="{{ url('search') }}" id="search">
+        	<input type="text" id="query" name="q" placeholder="Suchbegriff eingeben ..." />
+        	<input type="submit" value="Suchen" class="btn" style="margin-top: 0" />
+        </form>
 
         <!-- <div class="nav-collapse">
 					<ul class="nav">
@@ -105,7 +110,7 @@
 					<div style="display: none"><span class="quote"> Für die tägliche Arbeit eine hervorragende Unterstützung. </span><span class="author"><strong>Phillip Hartig</strong><br />ÖVP-Parlamentsklub</span></div>
 					<div style="display: none"><span class="quote"> Ein hervorragender Überblick über die Lage der EU. </span><span class="author"><strong>Wolfgang Böhm</strong><br />Die Presse</span></div>
 					<div style="display: none"><span class="quote"> Die Inhalte werden in der Printpresse nicht so ausführlich dargestellt. </span><span class="author"><strong>Dieter Pitthan</strong><br />privat</span></div>
-					<div style="display: none"><span class="quote"> Sehr hilfreich, und wichtiger Bestandteil meiner täglichen Arbeit. </span><span class="author"><strong>Anna Meusberger</strong><br />Europäisches Parlament</span></div>
+					<div style="display: none"><span class="quote"> Sehr hilfreich, und wichtiger Bestandteil meiner täglichen Arbeit. </span><span class="author"><strong>Anna Meusburger</strong><br />Europäisches Parlament</span></div>
 					<div style="display: none"><span class="quote"> Eine hervorragende<br />Info-Quelle. </span><span class="author"><strong>Friedhelm Frischenschlager</strong><br />Europäische Föderalistische Bewegung</span></div>
 					<div style="display: none"><span class="quote"> Für mich eine tägliche<br />MUSS-Lektüre. </span><span class="author"><strong>Karl G. Doutlik</strong><br />ehem. Europäische Kommission</span></div>
 					<div style="display: none"><span class="quote"> Sehr informativ. Gute Auswahl. Immer von besonderer Aktualität. </span><span class="author"><strong>Neisser Heinrich</strong><br />Universität Innsbruck</span></div>
