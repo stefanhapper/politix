@@ -1,10 +1,10 @@
 {% for partner in partners %}
 
   <div class="box partner">
-    <div class="title">Partner</div>
+    <div class="title">Kooperationspartner</div>
     {% for item in partner %}
       <div class="content">
-        <img class="logo" src="/img/logos/{{ item.source }}.png" alt="{{ item.source }}" />
+        <img class="logo" src="/img/logos/{{ item.source }}-296.png" alt="{{ item.source }}" />
         <a href='/news/{{ item.id }}'>
           <strong>{{ item.title }}</strong>
           <div class='description' style='margin-top: 5px;'>{{ item.description }}</div>
