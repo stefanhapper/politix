@@ -79,13 +79,21 @@ $(document).ready(function () {
 		mixpanel.track('Newsletter focus');
 	});
 	
-	mixpanel.track("Page loaded");
+	$('#newsletterbox2').focus(function() {
+		mixpanel.track('Newsletter focus');
+	});
 	
-	$("#my_button").click(function() {
-    // This sends us an event every time a user clicks the button
-    mixpanel.track("Button clicked"); 
+	
+	$('#newsletterform').submit( function() {
+		mixpanel.track('Newsletter submit');
 	});
 
+	$('#newsletterform2').submit( function() {
+		mixpanel.track('Newsletter submit');
+	});
+
+	mixpanel.track("Page loaded");
+	
 });
 
 
