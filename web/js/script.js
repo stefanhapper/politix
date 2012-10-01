@@ -74,7 +74,11 @@ $(document).ready(function () {
     	}
     });
 	});
-
+	
+	$('#newsletterbox').focus(function() {
+		mixpanel.track('Newsletter focus');
+	});
+	
 	mixpanel.track("Page loaded");
 	
 	$("#my_button").click(function() {
