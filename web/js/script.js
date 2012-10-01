@@ -83,15 +83,9 @@ $(document).ready(function () {
 		mixpanel.track('Newsletter focus');
 	});
 	
+	mixpanel.track_forms("#newsletterform","Newsletter submit");
+	mixpanel.track_forms("#newsletterform2","Newsletter submit");
 	
-	$('#newsletterform').submit( function() {
-		mixpanel.track('Newsletter submit');
-	});
-
-	$('#newsletterform2').submit( function() {
-		mixpanel.track('Newsletter submit');
-	});
-
 	mixpanel.track("Page loaded");
 	
 });
