@@ -254,12 +254,13 @@ a:hover {
 
 /* ----- google ads ----------------------------------------------------------------------------- */
 
-.ad {
+#right .ad {
 	height: 250px;
 	overflow: hidden;
+	padding: 0;
 }
 	
-.ad .content {
+#right .ad .content {
 	padding: 0;
 }
 
@@ -372,10 +373,15 @@ html.lt-ie9 .features-wrapper { .ieborder; }
 
 @media (min-width: 1200px) {
 
+	#right .ad {
+		height: auto;
+	}
+	
 	#right .ad .content {
 		text-align: center;
 		padding-top: 30px;
 		padding-bottom: 30px;
+		height: auto;
 	}
 
 }
@@ -384,12 +390,13 @@ html.lt-ie9 .features-wrapper { .ieborder; }
 
 @media (min-width: 960px) and (max-width: 1200px) {
 
-	.ad {
+	#right .ad {
 		height: 250px;
 		overflow: hidden;
+		padding: 0;
 	}
 	
-	.ad .content {
+	#right .ad .content {
 		padding: 0;
 	}
 
@@ -424,6 +431,10 @@ html.lt-ie9 .features-wrapper { .ieborder; }
 	#welcome,
 	#main {
 		margin-top: -20px;
+	}
+	
+	#right {
+		display: none;
 	}
 	
 }
