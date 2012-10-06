@@ -1,21 +1,15 @@
 <?php
 
 namespace Politix\PolitikportalBundle\Model;
-
 use Doctrine\DBAL\Connection;
-
 
 class UserModel {
     
     private $conn;
     
-    
     function __construct(Connection $conn) {
-    	
     	$this->conn = $conn;
-    	
     }
-    
     
     public function existingEmail($email) {
   		$sql = "SELECT id FROM subscribers WHERE email LIKE '" . $email . "'";
@@ -24,20 +18,19 @@ class UserModel {
 		  else return false;
     }
 
-
     public function addEmail($email) {
     	$sql = "INSERT INTO subscribers (email,type,info) VALUES ('" . $email . "','daily','self')";
   		$result = $this->conn->query($sql);
-	  	if ($result == 1) {
-			  $id = mysql_insert_id();
+	  	if ($result == TRUE) {
+			  $id = $this->conn->lastInsertId();
 			  $info = "user registered via website";
 			  $sql = "INSERT INTO subscribers_info (i,info) VALUES (" . mysql_real_escape_string($id) . ",'" . mysql_real_escape_string($info) . "')";
-			  $info_result = mysql_query($sql);
+			  $this->conn->query($sql);
 			  return TRUE;
 		  } else {
 			  return FALSE;
-		}
-	}
+		  }
+	  }
 
 
 /******************************************************************************
