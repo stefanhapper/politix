@@ -24,7 +24,7 @@ class UserModel {
 	  	if ($result == TRUE) {
 			  $id = $this->conn->lastInsertId();
 			  $info = "user registered via website";
-			  $sql = "INSERT INTO subscribers_info (i,info) VALUES (" . mysql_real_escape_string($id) . ",'" . mysql_real_escape_string($info) . "')";
+			  $sql = "INSERT INTO subscribers_info (i,info) VALUES (" . $id . ",'" . $info . "')";
 			  $this->conn->query($sql);
 			  return TRUE;
 		  } else {
