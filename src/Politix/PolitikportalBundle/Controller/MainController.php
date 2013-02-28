@@ -33,6 +33,7 @@ class MainController extends Controller {
 		$lastModified = new \DateTime('@' . $ApcLastModified);
     $lastModified->setTimezone($timezone);
     $this->response->setLastModified($lastModified);
+    $this->response->headers->set('Connection', 'Keep-alive');
     $request = $this->getRequest();
     if ($this->response->isNotModified($this->getRequest())) {
       return $this->response;
